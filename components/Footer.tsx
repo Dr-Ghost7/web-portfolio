@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ChevronUp, Heart, ShieldAlert } from 'lucide-react';
+import { ChevronUp, Mail } from 'lucide-react';
 import { GithubIcon } from '@/components/icons/GithubIcon';
 import { cyberAudio } from '@/lib/sounds';
 
@@ -20,31 +20,31 @@ export function Footer() {
             <span className="text-[#fcee0a]">&gt;&gt;</span>
             <span>SINJINI GHOSH</span>
             <span className="text-[#ff003c]">//</span>
-            <span>DR-GHOST7</span>
+            <span>PORTFOLIO</span>
           </div>
           <div className="text-[11px] text-[#8a8f9d]">
-            NEXT.JS 15 APP ROUTER // REACT 19 // TAILWIND CSS // WEB AUDIO API
+            Next.js 15 App Router • React 19 • TypeScript • Tailwind CSS
           </div>
         </div>
 
-        {/* Center: System telemetry */}
-        <div className="flex items-center gap-4 text-[10px] text-[#8a8f9d]">
+        {/* Center: System info */}
+        <div className="flex items-center gap-3 text-[10px] text-[#8a8f9d]">
           <span className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>CORE_ONLINE</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-400" />
+            <span>B.Tech CSE &apos;27</span>
           </span>
-          <span>//</span>
-          <span>CYBER_THEME: HIGH_VOLTAGE</span>
-          <span>//</span>
-          <span className="text-[#fcee0a]">BUILD: 2026.11</span>
+          <span>•</span>
+          <span>github.com/Dr-Ghost7</span>
+          <span>•</span>
+          <span className="text-[#fcee0a]">sguse001@gmail.com</span>
         </div>
 
-        {/* Right: Return to top button */}
+        {/* Right: Return to top */}
         <div className="flex items-center gap-3">
           <button
             onClick={scrollToTop}
             className="px-3 py-2 bg-[#13141c] hover:bg-[#fcee0a] text-white hover:text-black border border-[#222533] hover:border-[#fcee0a] transition-all flex items-center gap-1.5 font-bold cursor-pointer clip-cyber-button"
-            title="Return to top HUD"
+            title="Return to top"
           >
             <span>TOP</span>
             <ChevronUp size={14} />

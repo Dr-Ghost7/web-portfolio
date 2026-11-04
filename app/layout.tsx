@@ -17,18 +17,19 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'SINJINI GHOSH // CYBER_PORTFOLIO [DEV & DESIGN]',
+  title: 'Sinjini Ghosh | Portfolio',
   description:
-    'Slick cyberpunk portfolio of Sinjini Ghosh (Dr-Ghost7). Frontend Engineering in React, Next.js 15, Vanilla JS, and Graphic Design Systems.',
+    'Portfolio of Sinjini Ghosh (Dr-Ghost7). Final year B.Tech CSE student specializing in Frontend Development with React.js, Next.js, JavaScript, and Graphic Design.',
   keywords: [
     'Frontend Developer',
     'React.js',
     'Next.js',
+    'JavaScript',
     'Graphic Designer',
-    'UI/UX Designer',
+    'Canva',
     'Sinjini Ghosh',
     'Dr-Ghost7',
-    'Cyberpunk Portfolio',
+    'Portfolio',
   ],
   authors: [{ name: 'Sinjini Ghosh', url: 'https://github.com/Dr-Ghost7' }],
 };

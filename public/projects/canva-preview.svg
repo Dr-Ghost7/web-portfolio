@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0d0e14"/>
+  <defs>
+    <linearGradient id="canvaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00c4cc"/>
+      <stop offset="50%" stop-color="#7d2ae8"/>
+      <stop offset="100%" stop-color="#ff007a"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="30" y="25" width="740" height="400" fill="#12141f" stroke="#26283d" stroke-width="1" rx="6"/>
+  <rect x="30" y="25" width="740" height="50" fill="#181a29" rx="6"/>
+  
+  <text x="55" y="57" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold">GRAPHIC DESIGN &amp; BRAND VISUALS</text>
+  <text x="745" y="57" text-anchor="end" fill="#00c4cc" font-family="monospace" font-size="12" font-weight="bold">PRIMARY TOOL: CANVA</text>
+
+  <!-- Visual Boards Mockup -->
+  <g transform="translate(60, 100)">
+    <!-- Board 1 -->
+    <rect x="0" y="0" width="200" height="280" fill="#1a1d2e" stroke="#303450" rx="4"/>
+    <rect x="15" y="15" width="170" height="140" fill="url(#canvaGrad)" rx="3" opacity="0.85"/>
+    <text x="20" y="185" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold">Visual Layouts</text>
+    <text x="20" y="205" fill="#8a8f9d" font-family="sans-serif" font-size="10">Social branding, promotional graphics</text>
+    <rect x="20" y="230" width="65" height="20" fill="#252940" rx="2"/><text x="52" y="244" fill="#00c4cc" text-anchor="middle" font-family="monospace" font-size="9">CANVA</text>
+
+    <!-- Board 2 -->
+    <rect x="240" y="0" width="200" height="280" fill="#1a1d2e" stroke="#303450" rx="4"/>
+    <rect x="255" y="15" width="170" height="140" fill="#22273d" rx="3"/>
+    <circle cx="340" cy="85" r="35" fill="#fcee0a" opacity="0.8"/>
+    <text x="260" y="185" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold">Posters &amp; Covers</text>
+    <text x="260" y="205" fill="#8a8f9d" font-family="sans-serif" font-size="10">High-contrast typographical art</text>
+    <rect x="260" y="230" width="65" height="20" fill="#252940" rx="2"/><text x="292" y="244" fill="#fcee0a" text-anchor="middle" font-family="monospace" font-size="9">CANVA</text>
+
+    <!-- Board 3 -->
+    <rect x="480" y="0" width="200" height="280" fill="#1a1d2e" stroke="#303450" rx="4"/>
+    <rect x="495" y="15" width="170" height="140" fill="#1e2538" rx="3"/>
+    <rect x="515" y="35" width="130" height="20" fill="#ff003c" opacity="0.7" rx="2"/>
+    <rect x="515" y="65" width="90" height="12" fill="#ffffff" opacity="0.5" rx="2"/>
+    <rect x="515" y="85" width="110" height="12" fill="#ffffff" opacity="0.3" rx="2"/>
+    <text x="500" y="185" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold">Presentation Decks</text>
+    <text x="500" y="205" fill="#8a8f9d" font-family="sans-serif" font-size="10">Clean UI flow &amp; structured content</text>
+    <rect x="500" y="230" width="65" height="20" fill="#252940" rx="2"/><text x="532" y="244" fill="#ff003c" text-anchor="middle" font-family="monospace" font-size="9">CANVA</text>
+  </g>
+</svg>

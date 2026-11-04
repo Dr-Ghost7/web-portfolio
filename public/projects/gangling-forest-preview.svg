@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#060907"/>
+  <circle cx="400" cy="140" r="50" fill="#eaf4ec" opacity="0.15"/>
+
+  <!-- Pine Tree Silhouettes (Back Layer) -->
+  <g fill="#0c1a14" opacity="0.6">
+    <polygon points="100,380 130,220 160,380"/>
+    <polygon points="180,380 220,180 260,380"/>
+    <polygon points="320,380 350,230 380,380"/>
+    <polygon points="440,380 480,200 520,380"/>
+    <polygon points="580,380 620,210 660,380"/>
+    <polygon points="680,380 720,240 760,380"/>
+  </g>
+
+  <!-- Pine Tree Silhouettes (Front Layer) -->
+  <g fill="#07120d">
+    <polygon points="40,420 80,180 120,420"/>
+    <polygon points="120,420 170,140 220,420"/>
+    <polygon points="270,420 310,160 350,420"/>
+    <polygon points="380,420 420,130 460,420"/>
+    <polygon points="510,420 560,150 610,420"/>
+    <polygon points="630,420 670,170 710,420"/>
+  </g>
+
+  <rect x="0" y="380" width="800" height="70" fill="#040a07"/>
+
+  <!-- Top bar -->
+  <rect x="40" y="35" width="720" height="60" fill="#09130d" stroke="#1b3325" stroke-width="1" rx="4"/>
+  <text x="65" y="72" fill="#f5f6fa" font-family="monospace" font-size="20" font-weight="bold">GANGLING BRO'S FOREST</text>
+  <text x="730" y="62" text-anchor="end" fill="#fa5c5c" font-family="monospace" font-size="12" font-weight="bold">PUBLISHED ON ITCH.IO</text>
+  <text x="730" y="80" text-anchor="end" fill="#8a8f9d" font-family="monospace" font-size="10">GITHUB: PROJECT2ALPHA // GODOT &amp; GDSCRIPT</text>
+
+  <!-- Center Card -->
+  <g transform="translate(250, 190)">
+    <rect width="300" height="95" fill="#08120b" stroke="#3ee08a" stroke-width="1.5" rx="4" opacity="0.95"/>
+    <text x="150" y="35" text-anchor="middle" fill="#3ee08a" font-family="monospace" font-size="14" font-weight="bold">GODOT ENGINE &amp; GDSCRIPT</text>
+    <text x="150" y="60" text-anchor="middle" fill="#d1d5db" font-family="sans-serif" font-size="12">Atmospheric 2D Navigation &amp; Mechanics</text>
+    <text x="150" y="80" text-anchor="middle" fill="#fa5c5c" font-family="monospace" font-size="11">★ PLAYABLE ON ITCH.IO</text>
+  </g>
+</svg>

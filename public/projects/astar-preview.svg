@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#08080c"/>
+  <defs>
+    <pattern id="gridAstar" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#181824" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#gridAstar)"/>
+
+  <!-- Header -->
+  <rect x="30" y="20" width="740" height="45" fill="#12131c" stroke="#262838" stroke-width="1" rx="4"/>
+  <text x="50" y="48" fill="#f5f6fa" font-family="monospace" font-size="16" font-weight="bold">A* SEARCH vs. Q-LEARNING SIMULATION</text>
+  <text x="750" y="48" text-anchor="end" fill="#fcee0a" font-family="monospace" font-size="12">BENCHMARKING 250 MAZES</text>
+
+  <!-- Left: Maze Grid -->
+  <rect x="30" y="80" width="450" height="340" fill="#0f1017" stroke="#262838" stroke-width="1" rx="4"/>
+  <text x="50" y="110" fill="#8a8f9d" font-family="monospace" font-size="12">PROCEDURAL MAZE SOLVER [21x21 GRID]</text>
+
+  <!-- Maze Walls -->
+  <g fill="#222436">
+    <rect x="80" y="130" width="40" height="120"/>
+    <rect x="160" y="170" width="120" height="30"/>
+    <rect x="160" y="240" width="40" height="100"/>
+    <rect x="240" y="280" width="140" height="30"/>
+    <rect x="320" y="140" width="30" height="100"/>
+    <rect x="390" y="190" width="40" height="120"/>
+  </g>
+
+  <!-- Q-Learning Exploration Heat Trail -->
+  <path d="M 60 145 L 60 275 L 140 275 L 140 360 L 220 360 L 220 220 L 300 220 L 300 360 L 430 360 L 430 145" fill="none" stroke="#ff003c" stroke-width="4" opacity="0.4" stroke-dasharray="6,6"/>
+
+  <!-- A* Optimal Path -->
+  <path d="M 60 145 L 60 380 L 220 380 L 220 260 L 300 260 L 300 380 L 430 380 L 430 145" fill="none" stroke="#fcee0a" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Start & Goal -->
+  <circle cx="60" cy="145" r="8" fill="#3ee08a"/><text x="60" y="130" fill="#3ee08a" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold">START</text>
+  <circle cx="430" cy="145" r="8" fill="#fcee0a"/><text x="430" y="130" fill="#fcee0a" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold">GOAL</text>
+
+  <!-- Right: Metrics Comparison Card -->
+  <rect x="500" y="80" width="270" height="340" fill="#12131c" stroke="#262838" stroke-width="1" rx="4"/>
+  <text x="635" y="110" text-anchor="middle" fill="#f5f6fa" font-family="monospace" font-size="12" font-weight="bold">ALGORITHM BENCHMARK</text>
+
+  <rect x="520" y="135" width="230" height="75" fill="#090a0f" stroke="#fcee0a" stroke-width="1" rx="3"/>
+  <text x="535" y="158" fill="#fcee0a" font-family="monospace" font-size="11" font-weight="bold">A* HEURISTIC SEARCH</text>
+  <text x="535" y="178" fill="#d1d5db" font-family="monospace" font-size="10">Path: Deterministic Optimal</text>
+  <text x="535" y="195" fill="#8a8f9d" font-family="monospace" font-size="10">Execution: 1-Pass Exact</text>
+
+  <rect x="520" y="225" width="230" height="85" fill="#090a0f" stroke="#ff003c" stroke-width="1" rx="3"/>
+  <text x="535" y="248" fill="#ff003c" font-family="monospace" font-size="11" font-weight="bold">Q-LEARNING AGENT</text>
+  <text x="535" y="268" fill="#d1d5db" font-family="monospace" font-size="10">Budget: 150 Episodes</text>
+  <text x="535" y="285" fill="#d1d5db" font-family="monospace" font-size="10">Convergence: 84.8% Mazes</text>
+  <text x="535" y="300" fill="#8a8f9d" font-family="monospace" font-size="9">Trial-and-error policy updates</text>
+
+  <text x="635" y="380" text-anchor="middle" fill="#6f7c8f" font-family="monospace" font-size="10">Visualized with Python app.py</text>
+</svg>

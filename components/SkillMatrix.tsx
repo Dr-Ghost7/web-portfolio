@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { SKILLS_MATRIX } from '@/lib/projects-data';
-import { Cpu, CheckCircle, Flame, Layers } from 'lucide-react';
+import { Cpu, Flame } from 'lucide-react';
 import { cyberAudio } from '@/lib/sounds';
 
 export function SkillMatrix() {
@@ -25,8 +25,12 @@ export function SkillMatrix() {
         return 'bg-[#ff003c] text-white';
       case 'MODERN':
         return 'bg-white text-black';
+      case 'ACTIVE':
+        return 'bg-[#fcee0a] text-black';
       case 'PUBLISHED':
         return 'bg-emerald-400 text-black';
+      case 'FINAL YEAR':
+        return 'bg-blue-400 text-black';
       default:
         return 'bg-[#222533] text-white';
     }
@@ -39,13 +43,13 @@ export function SkillMatrix() {
         <div className="mb-10 pb-6 border-b border-[#222533]">
           <div className="flex items-center gap-2 text-xs font-mono text-[#fcee0a] uppercase tracking-widest mb-2">
             <Cpu size={14} />
-            <span>SECTOR_03 // CORE COMPETENCY MATRIX</span>
+            <span>CORE COMPETENCIES</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-[#f5f6fa]">
-            ENGINEERING & <span className="text-[#fcee0a]">DESIGN STACK</span>
+            TECHNICAL &amp; <span className="text-[#fcee0a]">CREATIVE SKILLS</span>
           </h2>
           <p className="text-xs sm:text-sm text-[#8a8f9d] mt-2 max-w-2xl leading-relaxed">
-            Proficiency grounded in fundamental browser mechanics (DOM, event propagation, CSS rendering trees) evolved into high-speed React 19 and Next.js 15 production workflows.
+            Proficiencies spanning frontend web engineering, digital visual tools, and game programming.
           </p>
         </div>
 
@@ -88,26 +92,25 @@ export function SkillMatrix() {
                 </div>
               </div>
 
-              {/* Bottom decorative telemetry */}
               <div className="pt-6 mt-6 border-t border-[#222533] flex justify-between items-center text-[10px] text-[#8a8f9d] font-mono">
-                <span>MODULE // VALIDATED</span>
-                <span className="text-[#fcee0a]">STATUS: ACTIVE</span>
+                <span>VERIFIED SKILLSET</span>
+                <span className="text-[#fcee0a]">ACTIVE WORKFLOW</span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Why Vanilla -> React Matters to the Employer */}
+        {/* The Vanilla JS -> React Advantage */}
         <div className="mt-8 p-6 bg-[#13141c] border border-[#222533] relative">
           <div className="absolute top-0 right-0 px-3 py-1 bg-[#fcee0a] text-black font-bold text-[10px] font-mono">
-            HIRING_INSIGHT
+            PERSPECTIVE
           </div>
           <h4 className="text-xs font-bold text-[#fcee0a] uppercase tracking-wider mb-2 font-mono flex items-center gap-2">
             <Flame size={14} />
-            <span>WHY THIS COMBINATION IS A COMPETITIVE ADVANTAGE</span>
+            <span>HOW SOLID FOUNDATIONS ELEVATE REACT DEVELOPMENT</span>
           </h4>
           <p className="text-xs sm:text-sm text-[#d1d5db] leading-relaxed">
-            Developers who jump straight into React without mastering raw JavaScript often struggle when hooks misbehave, re-renders cascade, or DOM mutations require pinpoint optimization. Having built vanilla HTML/JS projects first, I understand the underlying browser mechanics—allowing me to write clean, predictable, and performant React 19 & Next.js 15 code with zero framework blindspots.
+            Having built projects with raw JavaScript and CSS, I understand what happens behind the abstractions—from browser repaint cycles to event listener lifecycles. This allows me to write cleaner, more intentional React 19 and Next.js 15 components without relying on unnecessary dependencies or struggling with state synchronization.
           </p>
         </div>
       </div>

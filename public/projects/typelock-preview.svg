@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0a0d12"/>
+  <defs>
+    <pattern id="gridTypelock" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#16202c" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#gridTypelock)"/>
+
+  <!-- Top bar -->
+  <rect x="30" y="25" width="740" height="45" fill="#0f1420" stroke="#1c2433" stroke-width="1" rx="4"/>
+  <text x="50" y="53" fill="#ffffff" font-family="monospace" font-size="18" font-weight="bold">◈ TYPE<tspan fill="#3ee08a">LOCK</tspan></text>
+  <text x="750" y="53" text-anchor="end" fill="#6f7c8f" font-family="sans-serif" font-size="12">it's not what you type. it's how. // by Miss_StaticMoth</text>
+
+  <!-- Left: Live Oscilloscope Waveform -->
+  <rect x="30" y="85" width="460" height="335" fill="#0f1420" stroke="#1c2433" stroke-width="1" rx="4"/>
+  <text x="50" y="115" fill="#6f7c8f" font-family="monospace" font-size="12" font-weight="bold">LIVE RHYTHM OSCILLOSCOPE [DWELL &amp; FLIGHT TIME]</text>
+  
+  <!-- Waveform line -->
+  <path d="M 50 260 Q 90 260 110 180 T 140 260 T 190 260 T 220 140 T 260 260 T 320 260 T 350 160 T 390 260 T 450 260" fill="none" stroke="#3ee08a" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 50 310 Q 120 310 140 280 T 230 320 T 300 270 T 370 310 T 450 310" fill="none" stroke="#f2a65a" stroke-width="2" stroke-dasharray="4,4"/>
+
+  <text x="50" y="375" fill="#3ee08a" font-family="monospace" font-size="11">● DWELL TIME: 84ms</text>
+  <text x="195" y="375" fill="#f2a65a" font-family="monospace" font-size="11">▲ FLIGHT TIME: 142ms</text>
+  <text x="345" y="375" fill="#5b9dff" font-family="monospace" font-size="11">■ TOUCH RADIUS: 18px</text>
+
+  <!-- Right: Keypad -->
+  <rect x="510" y="85" width="260" height="335" fill="#0f1420" stroke="#1c2433" stroke-width="1" rx="4"/>
+  <text x="640" y="115" text-anchor="middle" fill="#6f7c8f" font-family="monospace" font-size="12" font-weight="bold">BEHAVIORAL BIOMETRIC PAD</text>
+  <rect x="535" y="135" width="210" height="35" fill="#0a0d12" stroke="#3ee08a" stroke-width="1" rx="2"/>
+  <text x="640" y="158" text-anchor="middle" fill="#3ee08a" font-family="monospace" font-size="16" letter-spacing="8">● ● ● ●</text>
+
+  <!-- Keys 3x4 -->
+  <g fill="#16202c" stroke="#26354a" font-family="monospace" font-size="15" text-anchor="middle" font-weight="bold">
+    <rect x="535" y="185" width="60" height="45" rx="3"/><text x="565" y="213" fill="#e7ecf2">1</text>
+    <rect x="610" y="185" width="60" height="45" rx="3"/><text x="640" y="213" fill="#e7ecf2">2</text>
+    <rect x="685" y="185" width="60" height="45" rx="3"/><text x="715" y="213" fill="#e7ecf2">3</text>
+
+    <rect x="535" y="240" width="60" height="45" rx="3"/><text x="565" y="268" fill="#e7ecf2">4</text>
+    <rect x="610" y="240" width="60" height="45" rx="3" fill="#1f362b" stroke="#3ee08a"/><text x="640" y="268" fill="#3ee08a">5</text>
+    <rect x="685" y="240" width="60" height="45" rx="3"/><text x="715" y="268" fill="#e7ecf2">6</text>
+
+    <rect x="535" y="295" width="60" height="45" rx="3"/><text x="565" y="323" fill="#e7ecf2">7</text>
+    <rect x="610" y="295" width="60" height="45" rx="3"/><text x="640" y="323" fill="#e7ecf2">8</text>
+    <rect x="685" y="295" width="60" height="45" rx="3"/><text x="715" y="323" fill="#e7ecf2">9</text>
+
+    <rect x="535" y="350" width="60" height="45" rx="3"/><text x="565" y="378" fill="#6f7c8f">CLR</text>
+    <rect x="610" y="350" width="60" height="45" rx="3"/><text x="640" y="378" fill="#e7ecf2">0</text>
+    <rect x="685" y="350" width="60" height="45" rx="3" fill="#3ee08a"/><text x="715" y="378" fill="#000000">ENT</text>
+  </g>
+</svg>

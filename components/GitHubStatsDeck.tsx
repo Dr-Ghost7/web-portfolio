@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { GitHubProfile, GitHubRepo, GITHUB_USERNAME } from '@/lib/github';
-import { Star, GitFork, Terminal, Search, ExternalLink, Activity, Code } from 'lucide-react';
+import { Star, GitFork, Terminal, Search, ExternalLink, Activity } from 'lucide-react';
 import { GithubIcon } from '@/components/icons/GithubIcon';
 import { cyberAudio } from '@/lib/sounds';
 
@@ -16,13 +16,10 @@ export function GitHubStatsDeck({ initialProfile, initialRepos }: GitHubStatsDec
   const [repos, setRepos] = useState<GitHubRepo[]>(initialRepos);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedLanguage, setSelectedLanguage] = useState<string>('ALL');
-  const [loading, setLoading] = useState<boolean>(false);
 
-  // Dynamic fetch to ensure freshest GitHub state on mount
   useEffect(() => {
     async function fetchFreshData() {
       try {
-        setLoading(true);
         const res = await fetch('/api/github');
         if (res.ok) {
           const data = await res.json();
@@ -30,9 +27,7 @@ export function GitHubStatsDeck({ initialProfile, initialRepos }: GitHubStatsDec
           if (data.repos && Array.isArray(data.repos)) setRepos(data.repos);
         }
       } catch (err) {
-        console.warn('API route fallback:', err);
-      } finally {
-        setLoading(false);
+        console.warn('API fallback:', err);
       }
     }
     fetchFreshData();
@@ -55,13 +50,13 @@ export function GitHubStatsDeck({ initialProfile, initialRepos }: GitHubStatsDec
           <div>
             <div className="flex items-center gap-2 text-xs font-mono text-[#ff003c] uppercase tracking-widest mb-2">
               <Activity size={14} className="animate-pulse" />
-              <span>SECTOR_02 // TELEMETRY DECK</span>
+              <span>OPEN SOURCE TELEMETRY</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-[#f5f6fa]">
-              LIVE GITHUB <span className="text-[#ff003c]">PIPELINE</span>
+              GITHUB <span className="text-[#ff003c]">REPOSITORIES</span>
             </h2>
             <p className="text-xs sm:text-sm text-[#8a8f9d] mt-2 max-w-xl">
-              Direct telemetry from <span className="text-white font-mono">github.com/{GITHUB_USERNAME}</span>. Real-time repository index and algorithmic repositories.
+              Live repository feed synced with <span className="text-white font-mono">github.com/{GITHUB_USERNAME}</span>.
             </p>
           </div>
 
@@ -77,7 +72,7 @@ export function GitHubStatsDeck({ initialProfile, initialRepos }: GitHubStatsDec
               <div className="flex items-center gap-2">
                 <span className="text-xs font-bold text-white">{profile.name || profile.login}</span>
                 <span className="text-[10px] px-1.5 py-0.2 bg-[#fcee0a] text-black font-bold font-mono">
-                  VERIFIED
+                  ACTIVE
                 </span>
               </div>
               <div className="text-[11px] text-[#8a8f9d] font-mono">@{profile.login}</div>
@@ -95,7 +90,7 @@ export function GitHubStatsDeck({ initialProfile, initialRepos }: GitHubStatsDec
             <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8a8f9d]" />
             <input
               type="text"
-              placeholder="FILTER REPOSITORIES (e.g., simulation, flag, lock, maze)..."
+              placeholder="Search repositories (e.g. typelock, flag, simulation)..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-9 pr-4 py-2.5 bg-[#0f1016] border border-[#222533] text-xs text-[#f5f6fa] placeholder-[#8a8f9d]/50 focus:border-[#fcee0a] focus:outline-none font-mono"
@@ -103,7 +98,7 @@ export function GitHubStatsDeck({ initialProfile, initialRepos }: GitHubStatsDec
           </div>
 
           <div className="flex flex-wrap gap-1.5 items-center">
-            <span className="text-[11px] text-[#8a8f9d] font-mono mr-1">LANG:</span>
+            <span className="text-[11px] text-[#8a8f9d] font-mono mr-1">LANGUAGE:</span>
             {languages.map((lang) => (
               <button
                 key={lang}
@@ -168,7 +163,7 @@ export function GitHubStatsDeck({ initialProfile, initialRepos }: GitHubStatsDec
                   onClick={() => cyberAudio.playClick()}
                   className="px-2.5 py-1 bg-[#14151f] group-hover:bg-[#fcee0a] text-white group-hover:text-black border border-[#222533] group-hover:border-[#fcee0a] text-[11px] font-bold flex items-center gap-1 transition-all"
                 >
-                  <span>INSPECT_GIT</span>
+                  <span>GITHUB</span>
                   <ExternalLink size={10} />
                 </a>
               </div>
@@ -178,7 +173,7 @@ export function GitHubStatsDeck({ initialProfile, initialRepos }: GitHubStatsDec
 
         {filteredRepos.length === 0 && (
           <div className="p-8 text-center border border-dashed border-[#222533] text-xs text-[#8a8f9d]">
-            NO MATCHING PROTOCOLS FOUND FOR QUERY: &ldquo;{searchTerm}&rdquo;
+            No matching repositories found for &ldquo;{searchTerm}&rdquo;
           </div>
         )}
       </div>

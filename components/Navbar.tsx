@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Volume2, VolumeX, Terminal, ExternalLink } from 'lucide-react';
+import { Volume2, VolumeX, ExternalLink } from 'lucide-react';
 import { GithubIcon } from '@/components/icons/GithubIcon';
 import { cyberAudio } from '@/lib/sounds';
 
@@ -53,21 +53,20 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
             <div>
               <div className="flex items-center gap-1.5 font-bold text-sm tracking-widest text-[#f5f6fa] group-hover:text-[#fcee0a] transition-colors">
                 <span>SINJINI GHOSH</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#fcee0a] animate-ping" />
               </div>
               <div className="text-[10px] text-[#8a8f9d] uppercase">
-                SYS_ID: <span className="text-[#ff003c]">DR-GHOST7</span>
+                PORTFOLIO // <span className="text-[#ff003c]">DR-GHOST7</span>
               </div>
             </div>
           </a>
 
           <div className="hidden lg:flex items-center gap-2 px-2.5 py-1 border border-[#222533] bg-[#0d0e13] text-[#8a8f9d]">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-[11px] text-emerald-400 font-medium">READY_FOR_DEPLOYMENT</span>
+            <span className="text-[11px] text-emerald-400 font-medium">B.TECH CSE &apos;27</span>
           </div>
         </div>
 
-        {/* Center: Quick Section Links */}
+        {/* Center: Navigation Links */}
         <nav className="hidden md:flex items-center space-x-6 text-[#8a8f9d]">
           <a
             href="#projects"
@@ -75,7 +74,7 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
             onClick={() => cyberAudio.playClick()}
             className="hover:text-[#fcee0a] transition-colors flex items-center gap-1"
           >
-            <span className="text-[#fcee0a]">//</span> 01.WORKS
+            <span className="text-[#fcee0a]">//</span> 01.PROJECTS
           </a>
           <a
             href="#github"
@@ -91,7 +90,7 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
             onClick={() => cyberAudio.playClick()}
             className="hover:text-[#fcee0a] transition-colors flex items-center gap-1"
           >
-            <span className="text-[#fcee0a]">//</span> 03.STACK
+            <span className="text-[#fcee0a]">//</span> 03.SKILLS
           </a>
           <a
             href="#contact"
@@ -99,22 +98,20 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
             onClick={() => cyberAudio.playClick()}
             className="hover:text-[#ff003c] transition-colors flex items-center gap-1"
           >
-            <span className="text-[#ff003c]">//</span> 04.TRANSMISSION
+            <span className="text-[#ff003c]">//</span> 04.CONTACT
           </a>
         </nav>
 
-        {/* Right: Audio toggle, Telemetry Clock, GitHub */}
+        {/* Right: Audio toggle, Clock, GitHub */}
         <div className="flex items-center space-x-3">
-          {/* Clock */}
           <div className="hidden sm:flex items-center px-2 py-1 bg-[#0d0e13] border border-[#222533] text-[#8a8f9d] text-[11px]">
-            <span className="text-[#fcee0a] mr-1.5">UTC</span>
+            <span className="text-[#fcee0a] mr-1.5">TIME</span>
             <span>{time || '--:--:--'}</span>
           </div>
 
-          {/* Sound Toggle */}
           <button
             onClick={toggleSound}
-            title={audioEnabled ? 'Mute Cyber Audio' : 'Enable Cyber Audio'}
+            title={audioEnabled ? 'Mute Audio Effects' : 'Enable Audio Effects'}
             className={`p-2 border transition-all cursor-pointer ${
               audioEnabled
                 ? 'border-[#fcee0a]/60 text-[#fcee0a] bg-[#fcee0a]/10 hover:bg-[#fcee0a]/20'
@@ -124,7 +121,6 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
             {audioEnabled ? <Volume2 size={15} /> : <VolumeX size={15} />}
           </button>
 
-          {/* GitHub Profile Button */}
           <a
             href={`https://github.com/${githubLogin}`}
             target="_blank"

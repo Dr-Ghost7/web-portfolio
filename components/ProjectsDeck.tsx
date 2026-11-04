@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { PROJECTS_DATA, ProjectItem } from '@/lib/projects-data';
 import { GraphicDesignModal } from '@/components/GraphicDesignModal';
 import { cyberAudio } from '@/lib/sounds';
-import { ExternalLink, Eye, Terminal, Sparkles, Filter } from 'lucide-react';
+import { ExternalLink, Eye } from 'lucide-react';
 import { GithubIcon } from '@/components/icons/GithubIcon';
 
 interface ProjectsDeckProps {
@@ -17,8 +17,6 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
 
   const filteredProjects = activeFilter === 'all'
     ? PROJECTS_DATA
-    : activeFilter === 'gamedev'
-    ? PROJECTS_DATA.filter((p) => p.category === 'gamedev' || p.category === 'terminal')
     : PROJECTS_DATA.filter((p) => p.category === activeFilter);
 
   const handleFilterClick = (filter: 'all' | 'web' | 'design' | 'gamedev') => {
@@ -56,13 +54,13 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
           <div>
             <div className="flex items-center gap-2 text-xs font-mono text-[#fcee0a] uppercase tracking-widest mb-2">
               <span className="w-2 h-2 bg-[#fcee0a]" />
-              <span>SECTOR_01 // CURATED ARTIFACTS</span>
+              <span>PORTFOLIO SHOWCASE</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-[#f5f6fa]">
-              DEV & DESIGN <span className="text-[#fcee0a]">SHOWCASE</span>
+              PROJECTS &amp; <span className="text-[#fcee0a]">CREATIVE WORKS</span>
             </h2>
             <p className="text-xs sm:text-sm text-[#8a8f9d] mt-2 max-w-xl">
-              Inspect responsive web engineering, algorithmic experiments, interactive game logic, and brand design systems.
+              Web applications, behavioral biometric experiments, algorithmic pathfinding, published Godot game, and digital graphics.
             </p>
           </div>
 
@@ -76,7 +74,7 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
                   : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white hover:border-[#8a8f9d]'
               }`}
             >
-              [ ALL_ARTIFACTS ({PROJECTS_DATA.length}) ]
+              [ All Works ({PROJECTS_DATA.length}) ]
             </button>
 
             <button
@@ -87,7 +85,7 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
                   : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white hover:border-[#8a8f9d]'
               }`}
             >
-              [ 01 // WEB_FRONTEND ]
+              [ Web &amp; Apps ]
             </button>
 
             <button
@@ -98,7 +96,7 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
                   : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white hover:border-[#ff003c]'
               }`}
             >
-              [ 02 // GRAPHIC_DESIGN ]
+              [ Canva &amp; Art ]
             </button>
 
             <button
@@ -109,7 +107,7 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
                   : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white hover:border-white'
               }`}
             >
-              [ 03 // GAMEDEV & CLI ]
+              [ Game Dev ]
             </button>
           </div>
         </div>
@@ -124,15 +122,15 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
                 project.accentColor
               )} transition-all duration-300 relative overflow-hidden clip-cyber-card hover:shadow-[0_0_25px_rgba(0,0,0,0.8)]`}
             >
-              {/* Card Top Image View */}
+              {/* Card Image */}
               <div className="relative aspect-video w-full overflow-hidden bg-[#060608]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-85 group-hover:opacity-100"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0f1016] via-transparent to-transparent opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0f1016] via-transparent to-transparent opacity-80" />
 
                 {/* Category & Status Badges */}
                 <div className="absolute top-3 left-3 flex items-center gap-1.5">
@@ -141,7 +139,11 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
                       project.accentColor
                     )}`}
                   >
-                    {project.category}
+                    {project.category === 'web'
+                      ? 'WEB'
+                      : project.category === 'design'
+                      ? 'GRAPHICS'
+                      : 'GAME'}
                   </span>
                   {project.featured && (
                     <span className="px-2 py-0.5 bg-[#060608]/80 text-[#fcee0a] border border-[#fcee0a]/40 text-[10px] font-bold">
@@ -150,17 +152,16 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
                   )}
                 </div>
 
-                {/* Quick inspect eye button overlay */}
                 <button
                   onClick={() => {
                     cyberAudio.playClick();
                     setSelectedProject(project);
                   }}
                   className="absolute bottom-3 right-3 px-2.5 py-1 bg-[#060608]/90 text-xs font-bold text-white border border-[#222533] hover:border-[#fcee0a] hover:text-[#fcee0a] transition-all flex items-center gap-1 cursor-pointer"
-                  title="Quick View Artifact Specs"
+                  title="Inspect Details"
                 >
                   <Eye size={12} />
-                  <span>INSPECT</span>
+                  <span>DETAILS</span>
                 </button>
               </div>
 
@@ -177,7 +178,7 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
                 </div>
 
                 <div>
-                  {/* Metrics preview if any */}
+                  {/* Metrics preview */}
                   {project.metrics && (
                     <div className="grid grid-cols-3 gap-1.5 py-2 mb-3 border-y border-[#222533]/80 text-center">
                       {project.metrics.map((m, idx) => (
@@ -215,7 +216,7 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
                       }}
                       className="text-xs font-bold text-[#fcee0a] hover:underline flex items-center gap-1 cursor-pointer"
                     >
-                      <span>VIEW_DETAILS</span>
+                      <span>View Details</span>
                       <span>→</span>
                     </button>
 
@@ -227,7 +228,7 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
                           rel="noopener noreferrer"
                           onClick={() => cyberAudio.playClick()}
                           className="p-1.5 bg-[#14151f] text-[#8a8f9d] hover:text-white border border-[#222533] hover:border-[#fcee0a] transition-all"
-                          title="View GitHub Repository"
+                          title="View on GitHub"
                         >
                           <GithubIcon size={13} />
                         </a>
@@ -239,7 +240,7 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
                           rel="noopener noreferrer"
                           onClick={() => cyberAudio.playClick()}
                           className="p-1.5 bg-[#14151f] text-[#8a8f9d] hover:text-[#fcee0a] border border-[#222533] hover:border-[#fcee0a] transition-all"
-                          title="Open Live Deployment"
+                          title="Open Game Link"
                         >
                           <ExternalLink size={13} />
                         </a>
@@ -253,7 +254,7 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
         </div>
       </div>
 
-      {/* Lightbox / Inspector Modal */}
+      {/* Details Lightbox Modal */}
       <GraphicDesignModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}

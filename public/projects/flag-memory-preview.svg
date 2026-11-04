@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#060608"/>
+  <defs>
+    <pattern id="gridFlag" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#15191f" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#gridFlag)"/>
+
+  <rect x="30" y="25" width="740" height="45" fill="#0f121a" stroke="#222938" stroke-width="1" rx="4"/>
+  <text x="50" y="53" fill="#ffffff" font-family="monospace" font-size="18" font-weight="bold">FLAG MEMORY // <tspan fill="#fcee0a">LEITNER REPETITION LAB</tspan></text>
+  <text x="750" y="53" text-anchor="end" fill="#00e676" font-family="monospace" font-size="12">VANILLA JS, HTML5 &amp; CSS3</text>
+
+  <!-- Left: Flag Card Showcase -->
+  <rect x="40" y="95" width="420" height="315" fill="#0d111a" stroke="#222938" stroke-width="1" rx="4"/>
+  <rect x="80" y="130" width="340" height="170" fill="#141a29" stroke="#00e676" stroke-width="1.5" rx="4"/>
+  
+  <text x="250" y="180" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="24" font-weight="bold">FLAG RECALL TEST</text>
+  <text x="250" y="210" text-anchor="middle" fill="#fcee0a" font-family="monospace" font-size="13">ACADEMY MODE // LEITNER BOX 2</text>
+  <text x="250" y="270" text-anchor="middle" fill="#8a8f9d" font-family="monospace" font-size="11">SPATIAL MEMORY MULTIPLIER: 2.4x</text>
+
+  <g transform="translate(80, 320)" font-family="monospace" font-size="11">
+    <rect x="0" y="0" width="100" height="35" fill="#141924" stroke="#2a354a" rx="2"/><text x="50" y="22" fill="#ffffff" text-anchor="middle">[ BOX 1 ]</text>
+    <rect x="120" y="0" width="100" height="35" fill="#1a2a20" stroke="#00e676" rx="2"/><text x="170" y="22" fill="#00e676" text-anchor="middle">[ BOX 2 ]</text>
+    <rect x="240" y="0" width="100" height="35" fill="#141924" stroke="#2a354a" rx="2"/><text x="290" y="22" fill="#ffffff" text-anchor="middle">[ BOX 3 ]</text>
+  </g>
+
+  <!-- Right: Death Mode & Audio Telemetry -->
+  <rect x="480" y="95" width="280" height="315" fill="#0d111a" stroke="#222938" stroke-width="1" rx="4"/>
+  <text x="620" y="130" text-anchor="middle" fill="#ff003c" font-family="monospace" font-size="14" font-weight="bold">DEATH MODE TIMING</text>
+  <rect x="510" y="155" width="220" height="60" fill="#1c1015" stroke="#ff003c" stroke-width="1" rx="2"/>
+  <text x="620" y="192" text-anchor="middle" fill="#ff003c" font-family="monospace" font-size="22" font-weight="bold">00:29:40</text>
+
+  <text x="620" y="250" text-anchor="middle" fill="#8a8f9d" font-family="monospace" font-size="11">RAPID-FIRE PROGRESSION</text>
+  <text x="620" y="275" text-anchor="middle" fill="#8a8f9d" font-family="monospace" font-size="11">DIFFICULTY RAMPING</text>
+  <text x="620" y="300" text-anchor="middle" fill="#8a8f9d" font-family="monospace" font-size="11">WEB AUDIO OSCILLATOR FX</text>
+
+  <rect x="510" y="335" width="220" height="40" fill="#00e676" rx="3"/>
+  <text x="620" y="360" text-anchor="middle" fill="#000000" font-family="monospace" font-size="12" font-weight="bold">LIVE PROTOCOL</text>
+</svg>
