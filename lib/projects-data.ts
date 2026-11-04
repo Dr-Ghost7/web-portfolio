@@ -20,34 +20,34 @@ export interface ProjectItem {
   };
 }
 
-export const PROJECTS_DATA: ProjectItem[] = [
-  // --- 1. WEB & APPLICATIONS ---
+// 1. TECHNICAL WORKS (WEB APPS, ALGORITHMS & GAMES)
+export const TECHNICAL_PROJECTS: ProjectItem[] = [
   {
     id: 'typelock',
     title: 'TypeLock',
     category: 'web',
     subtitle: 'Behavioral Biometric Keypad & Touch Dynamics',
     description:
-      'A PIN-pad lock screen that checks more than just the PIN—it verifies how you type it. Analyzes key hold duration (dwell time), gaps between taps (flight time), touch pressure, contact patch size, and center precision to identify users purely from typing rhythm using an explainable classifier.',
+      'PIN-pad lock screen authenticating users by typing rhythm—measuring dwell time, flight intervals, and touch dynamics with a live oscilloscope.',
     tags: ['JavaScript', 'Touch Dynamics', 'Biometrics', 'CSS3', 'Web Audio'],
     githubUrl: 'https://github.com/Dr-Ghost7/typelock',
     featured: true,
     metrics: [
       { label: 'CLASSIFIER', value: 'STATISTICAL' },
-      { label: 'TELEMETRY', value: 'DWELL & FLIGHT' },
-      { label: 'UI', value: 'LIVE OSCILLOSCOPE' },
+      { label: 'METRICS', value: 'DWELL & FLIGHT' },
+      { label: 'UI', value: 'OSCILLOSCOPE' },
     ],
-    image: '/projects/typelock-preview.svg',
+    image: '/screenshots/typelock.png',
     accentColor: 'yellow',
     details: {
-      role: 'Sole Developer & Designer',
+      role: 'Developer & Designer',
       timeline: 'Web Application',
       challenges:
-        'Extracting sub-millisecond dwell times and pointer events across various touchscreens, and building an explainable model based on mean and standard deviation without black-box ML dependencies.',
+        'Capturing sub-millisecond pointer events across different touchscreens and building an explainable classification model.',
       deliverables: [
-        'Live rhythm oscilloscope tracking dwell and flight times in real time',
+        'Live rhythm oscilloscope tracking dwell and flight times',
         'Enrollment and biometric verification workflow',
-        'Custom tactile dark keypad interface with visual rhythm feedback',
+        'Custom tactile dark keypad interface',
       ],
       palette: ['#0a0d12', '#0f1420', '#3ee08a', '#f2a65a', '#5b9dff'],
     },
@@ -58,26 +58,26 @@ export const PROJECTS_DATA: ProjectItem[] = [
     category: 'web',
     subtitle: 'Spaced Repetition & Cognitive Recall Web App',
     description:
-      'An interactive flag memorization web application featuring a 3-tier Leitner Box spaced repetition system (Academy mode), high-stakes Death Mode with progressive difficulty scaling and timer penalties, Inversion mode, and audio feedback.',
+      'Cognitive challenge app using a 3-tier Leitner Box spaced repetition system, progressive Death Mode, and audio feedback.',
     tags: ['JavaScript', 'HTML5', 'CSS3', 'Spaced Repetition', 'Web Audio'],
     githubUrl: 'https://github.com/Dr-Ghost7/flag-memory-app',
     featured: true,
     metrics: [
       { label: 'ALGORITHM', value: 'LEITNER SYSTEM' },
-      { label: 'GAME MODES', value: 'ACADEMY & DEATH' },
-      { label: 'AUDIO', value: 'WEB AUDIO FX' },
+      { label: 'MODES', value: 'ACADEMY & DEATH' },
+      { label: 'AUDIO', value: 'WEB AUDIO' },
     ],
-    image: '/projects/flag-memory-preview.svg',
+    image: '/screenshots/flag-memory.png',
     accentColor: 'yellow',
     details: {
-      role: 'Frontend Developer & UI Designer',
+      role: 'Developer & Designer',
       timeline: 'Web Application',
       challenges:
-        'Implementing multi-tier spaced repetition (Box 1 to Box 3 progression) with countdown timers, combo score tracking, and smooth responsive card layouts with zero framework overhead.',
+        'Implementing 3-tier spaced repetition with difficulty scaling, countdown timers, and responsive layout without frameworks.',
       deliverables: [
         'Leitner Box cognitive progression system',
-        'Death mode with ramped difficulty and countdown penalties',
-        'Custom grid layout and sound-effect synthesizer',
+        'Timer-based Death mode with ramped difficulty',
+        'Responsive layout with audio synthesizer feedback',
       ],
       palette: ['#060608', '#0d111a', '#00e676', '#fcee0a', '#ff003c'],
     },
@@ -86,41 +86,39 @@ export const PROJECTS_DATA: ProjectItem[] = [
     id: 'astar-vs-qlearning',
     title: 'A* vs. Q-Learning Simulation',
     category: 'web',
-    subtitle: 'Heuristic Search vs. Reinforcement Learning on Mazes',
+    subtitle: 'Heuristic Search vs. Reinforcement Learning',
     description:
-      'Algorithmic benchmark comparing deterministic heuristic search (A*) against a reinforcement learning agent (Q-Learning) across procedurally generated mazes. Evaluates path optimality, step penalties, and convergence over a 150-episode training budget across 250 test mazes.',
+      'Algorithmic benchmark evaluating deterministic A* search against reinforcement learning across 250 procedural mazes.',
     tags: ['Python', 'Algorithms', 'A* Search', 'Q-Learning', 'Simulation'],
     githubUrl: 'https://github.com/Dr-Ghost7/astar-vs-qlearning-simulation',
     featured: true,
     metrics: [
-      { label: 'DATASET', value: '250 MAZES' },
-      { label: 'Q-CONVERGENCE', value: '84.8% SUCCESS' },
-      { label: 'SEARCH', value: 'DETERMINISTIC A*' },
+      { label: 'BENCHMARK', value: '250 MAZES' },
+      { label: 'Q-LEARNING', value: '84.8% SUCCESS' },
+      { label: 'A* SEARCH', value: '100% OPTIMAL' },
     ],
-    image: '/projects/astar-preview.svg',
+    image: '/screenshots/astar-qlearning.png',
     accentColor: 'red',
     details: {
-      role: 'Developer & Researcher',
-      timeline: 'AI Simulation Project',
+      role: 'Developer',
+      timeline: 'AI Simulation',
       challenges:
-        'Balancing exploration vs exploitation parameters in Q-learning on complex 21x21 mazes within a strict 150-episode budget, and visualizing comparative metrics.',
+        'Balancing exploration vs exploitation parameters in Q-learning within a strict 150-episode budget.',
       deliverables: [
         'Procedural maze generation and A* optimal solver',
-        'Q-Learning agent with reward shaping and policy convergence',
+        'Q-Learning agent with reward shaping',
         'Benchmarking engine with scatter plot visualizer in app.py',
       ],
       palette: ['#08080c', '#12131c', '#fcee0a', '#ff003c', '#3ee08a'],
     },
   },
-
-  // --- 2. GAME DEVELOPMENT ---
   {
     id: 'gangling-bros-forest',
     title: "Gangling Bro's Forest",
     category: 'gamedev',
     subtitle: 'Published Indie Game on itch.io (Project2alpha)',
     description:
-      'Atmospheric indie game published on itch.io. Developed using Godot Engine and GDScript, featuring custom player movement physics, environmental traversal, and an eerie atmospheric forest mood.',
+      'Atmospheric 2D exploration game published on itch.io, featuring custom player mechanics in Godot Engine and GDScript.',
     tags: ['Godot Engine', 'GDScript', 'Game Dev', 'itch.io', 'Atmospheric'],
     githubUrl: 'https://github.com/Dr-Ghost7/Project2alpha',
     liveUrl: 'https://missstaticmoth.itch.io/gangling-bros-forest',
@@ -130,31 +128,33 @@ export const PROJECTS_DATA: ProjectItem[] = [
       { label: 'ENGINE', value: 'GODOT ENGINE' },
       { label: 'SCRIPTING', value: 'GDSCRIPT' },
     ],
-    image: '/projects/gangling-forest-preview.svg',
+    image: '/screenshots/gangling-forest.png',
     accentColor: 'red',
     details: {
       role: 'Game Programmer & Designer',
-      timeline: 'Published Indie Title',
+      timeline: 'Published Title',
       challenges:
-        'Crafting responsive 2D movement controls, collision detection, and mood-driven environmental pacing within Godot Engine.',
+        'Crafting responsive movement physics, collision handling, and moody environmental visuals within Godot.',
       deliverables: [
-        'Complete player controller and navigation logic in GDScript',
-        'Custom level design and atmospheric environmental artwork',
-        'Playable game build exported and published on itch.io',
+        'Player movement and camera controller in GDScript',
+        'Atmospheric environmental visual presentation',
+        'Playable game published on itch.io',
       ],
       palette: ['#060807', '#0c1a14', '#183a2b', '#3ee08a', '#fa5c5c'],
     },
   },
+];
 
-  // --- 3. GRAPHIC DESIGN (CANVA) ---
+// 2. CREATIVE & VISUAL WORKS (CANVA GRAPHIC DESIGN & IBIS PAINT X DIGITAL ART)
+export const CREATIVE_PROJECTS: ProjectItem[] = [
   {
     id: 'ampliverse',
     title: 'Ampliverse',
     category: 'design',
-    subtitle: 'Visual Design & Poster Layout (Canva)',
+    subtitle: 'Poster Layout & Visual Design (Canva)',
     description:
-      'High-impact typographic and graphic design poster crafted in Canva. Explores vertical poster composition, spatial contrast, color harmony, and bold modern visual messaging.',
-    tags: ['Canva', 'Graphic Design', 'Poster Design', 'Typography', 'Visual Composition'],
+      'High-contrast typographic poster layout and visual composition designed in Canva.',
+    tags: ['Canva', 'Graphic Design', 'Poster Design', 'Typography'],
     featured: true,
     metrics: [
       { label: 'TOOL', value: 'CANVA' },
@@ -165,13 +165,11 @@ export const PROJECTS_DATA: ProjectItem[] = [
     accentColor: 'yellow',
     details: {
       role: 'Graphic Designer',
-      timeline: 'Design Showcase',
-      challenges:
-        'Balancing typographic weight and negative space to establish an eye-catching focal hierarchy across digital and print viewing distances.',
+      timeline: 'Visual Design',
+      challenges: 'Balancing bold typographic hierarchy and negative space.',
       deliverables: [
-        'Print and digital poster layout',
-        'Cohesive color grading and contrast tuning',
-        'Scalable graphic layout in Canva',
+        'Print and digital poster composition',
+        'High-contrast color grading',
       ],
       palette: ['#0d0e14', '#1a1d2e', '#00c4cc', '#fcee0a', '#ff003c'],
     },
@@ -180,27 +178,25 @@ export const PROJECTS_DATA: ProjectItem[] = [
     id: 'ignatius',
     title: 'Ignatius',
     category: 'design',
-    subtitle: 'Key Visual & Character Graphic Design (Canva)',
+    subtitle: 'Character Key Visual & Editorial Layout (Canva)',
     description:
-      'Character-driven graphic design composition with bold typographic framing, created in Canva. Combines character focal elements with structured modern editorial layout.',
-    tags: ['Canva', 'Graphic Design', 'Key Visual', 'Typography', 'Editorial Layout'],
+      'Character-driven key visual and modern editorial layout created in Canva.',
+    tags: ['Canva', 'Graphic Design', 'Key Visual', 'Typography'],
     featured: true,
     metrics: [
       { label: 'TOOL', value: 'CANVA' },
       { label: 'RESOLUTION', value: '1920 x 1920' },
-      { label: 'GENRE', value: 'KEY VISUAL' },
+      { label: 'FORMAT', value: 'KEY VISUAL' },
     ],
     image: '/graphics-design/ignatius.png',
     accentColor: 'red',
     details: {
       role: 'Graphic Designer',
-      timeline: 'Key Visual Design',
-      challenges:
-        'Integrating illustrative focal art with modern typographic framing and layered graphic badges.',
+      timeline: 'Key Visual',
+      challenges: 'Integrating focal character art with structured graphic typography.',
       deliverables: [
-        'High-resolution square key visual (1920x1920)',
-        'Editorial layout typography composition',
-        'Exported social media graphic kit',
+        '1920x1920 square key visual',
+        'Typography and layout arrangement in Canva',
       ],
       palette: ['#0a0a0c', '#181820', '#ff003c', '#ffffff', '#8a8f9d'],
     },
@@ -209,41 +205,37 @@ export const PROJECTS_DATA: ProjectItem[] = [
     id: 'zda-onboarding',
     title: 'ZDA Onboarding',
     category: 'design',
-    subtitle: 'UI Onboarding Layout & Visual Communication (Canva)',
+    subtitle: 'UI Onboarding Flow & Visual Layout (Canva)',
     description:
-      'User onboarding layout and instructional visual communication designed in Canva. Focused on clarity, readability, structured iconographic hierarchy, and intuitive information digestion.',
-    tags: ['Canva', 'UI/UX Design', 'Onboarding Layout', 'Information Design'],
+      'Onboarding layout and instructional visual communication designed in Canva.',
+    tags: ['Canva', 'UI Design', 'Onboarding Layout', 'Visual Communication'],
     featured: false,
     metrics: [
       { label: 'TOOL', value: 'CANVA' },
-      { label: 'APPLICATION', value: 'ONBOARDING UI' },
+      { label: 'FOCUS', value: 'ONBOARDING UI' },
       { label: 'STRUCTURE', value: 'STEP-BY-STEP' },
     ],
     image: '/graphics-design/zda-onboarding.png',
     accentColor: 'white',
     details: {
       role: 'UI Designer',
-      timeline: 'UI & Communication Design',
-      challenges:
-        'Designing a frictionless visual onboarding flow that communicates instructions clearly at a single glance.',
+      timeline: 'UI Layout',
+      challenges: 'Organizing complex instructions into a clean visual sequence.',
       deliverables: [
-        'Clean onboarding card layout',
-        'Consistent iconography and color tokens',
-        'User guidance structure designed in Canva',
+        'Step-by-step onboarding screen layout',
+        'Iconography and structured card presentation',
       ],
       palette: ['#0f1118', '#1a1f2e', '#3ee08a', '#5b9dff', '#ffffff'],
     },
   },
-
-  // --- 4. DIGITAL ART (IBIS PAINT X) ---
   {
     id: 'ghost-art',
     title: 'Ghost',
     category: 'art',
     subtitle: 'Atmospheric Digital Painting (Ibis Paint X)',
     description:
-      'High-resolution atmospheric digital painting created in Ibis Paint X (3400x2105 master). Demonstrates nuanced digital brushwork, ambient low-light values, environmental depth, and character silhouette rendering.',
-    tags: ['Ibis Paint X', 'Digital Painting', 'Mood & Lighting', 'Brushwork', 'Illustration'],
+      'Atmospheric digital painting created in Ibis Paint X with low-light values and subtle lighting.',
+    tags: ['Ibis Paint X', 'Digital Painting', 'Illustration', 'Mood Lighting'],
     featured: true,
     metrics: [
       { label: 'TOOL', value: 'IBIS PAINT X' },
@@ -255,12 +247,10 @@ export const PROJECTS_DATA: ProjectItem[] = [
     details: {
       role: 'Digital Illustrator',
       timeline: 'Digital Artwork',
-      challenges:
-        'Rendering subtle ambient lighting and luminous neon contrast against deep shadows to establish a palpable, cinematic mood.',
+      challenges: 'Rendering subtle low-light values and luminous neon accents against deep shadows.',
       deliverables: [
-        'Full 3.4K master digital illustration (3400x2105)',
-        'Multi-layer shading and atmospheric haze',
-        'Expressive brushwork and character rendering',
+        '3.4K master illustration (3400x2105)',
+        'Atmospheric depth and digital brushwork in Ibis Paint X',
       ],
       palette: ['#040507', '#0e121a', '#fcee0a', '#00e676', '#ffffff'],
     },
@@ -271,8 +261,8 @@ export const PROJECTS_DATA: ProjectItem[] = [
     category: 'art',
     subtitle: 'Environmental Digital Illustration (Ibis Paint X)',
     description:
-      'Intimate interior and architectural digital illustration crafted in Ibis Paint X. Explores cozy ambient perspective, line work, warm palette accents, and detailed prop composition.',
-    tags: ['Ibis Paint X', 'Environment Art', 'Digital Painting', 'Interior Scene', 'Illustration'],
+      'Environmental and architectural interior digital illustration crafted in Ibis Paint X.',
+    tags: ['Ibis Paint X', 'Environment Art', 'Digital Painting', 'Interior'],
     featured: true,
     metrics: [
       { label: 'TOOL', value: 'IBIS PAINT X' },
@@ -284,11 +274,9 @@ export const PROJECTS_DATA: ProjectItem[] = [
     details: {
       role: 'Digital Illustrator',
       timeline: 'Environment Art',
-      challenges:
-        'Constructing believable interior perspective with layered bookshelves, warm ambient lighting, and rich focal storytelling.',
+      challenges: 'Constructing warm interior perspective and detailed line work.',
       deliverables: [
-        'Detailed architectural and interior scene',
-        'Custom texture and prop details',
+        'Detailed architectural interior scene',
         'Color grading and lighting composition in Ibis Paint X',
       ],
       palette: ['#120f0d', '#291e18', '#f2a65a', '#fa5c5c', '#faeedc'],
@@ -300,7 +288,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     category: 'art',
     subtitle: 'Stylized Digital Character Portrait (Ibis Paint X)',
     description:
-      'Expressive stylized character portrait illustrated in Ibis Paint X. Focuses on facial plane definition, expressive linework, and personal artistic voice.',
+      'Stylized digital character portrait illustrated in Ibis Paint X with expressive linework.',
     tags: ['Ibis Paint X', 'Portrait Art', 'Digital Drawing', 'Character Art'],
     featured: false,
     metrics: [
@@ -313,17 +301,18 @@ export const PROJECTS_DATA: ProjectItem[] = [
     details: {
       role: 'Artist & Illustrator',
       timeline: 'Character Art',
-      challenges:
-        'Capturing character likeness and expressive emotion through confident digital pencil and brush techniques.',
+      challenges: 'Capturing expressive likeness through digital pencil and brush techniques.',
       deliverables: [
-        'Full portrait illustration (1080x1445)',
-        'Stylized line art and color blocking',
+        'Stylized portrait illustration (1080x1445)',
         'Digital artwork created in Ibis Paint X',
       ],
       palette: ['#0d0c12', '#1a1924', '#ff3b69', '#d1c7e6', '#ffffff'],
     },
   },
 ];
+
+export const ALL_PROJECTS: ProjectItem[] = [...TECHNICAL_PROJECTS, ...CREATIVE_PROJECTS];
+export const PROJECTS_DATA = ALL_PROJECTS;
 
 export const SKILLS_MATRIX = [
   {

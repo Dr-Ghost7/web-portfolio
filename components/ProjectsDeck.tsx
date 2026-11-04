@@ -1,27 +1,23 @@
 'use client';
 
 import React, { useState } from 'react';
-import { PROJECTS_DATA, ProjectItem } from '@/lib/projects-data';
+import { TECHNICAL_PROJECTS, CREATIVE_PROJECTS, ProjectItem } from '@/lib/projects-data';
 import { GraphicDesignModal } from '@/components/GraphicDesignModal';
 import { cyberAudio } from '@/lib/sounds';
-import { ExternalLink, Eye, Gamepad2, Palette, Code2, Sparkles } from 'lucide-react';
+import { ExternalLink, Eye, Gamepad2, Palette, Code2, Sparkles, Layers } from 'lucide-react';
 import { GithubIcon } from '@/components/icons/GithubIcon';
 
-interface ProjectsDeckProps {
-  initialFilter?: 'all' | 'web' | 'gamedev' | 'design' | 'art';
-}
-
-export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
-  const [activeFilter, setActiveFilter] = useState<'all' | 'web' | 'gamedev' | 'design' | 'art'>(initialFilter);
+export function ProjectsDeck() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [creativeFilter, setCreativeFilter] = useState<'all' | 'design' | 'art'>('all');
 
-  const filteredProjects = activeFilter === 'all'
-    ? PROJECTS_DATA
-    : PROJECTS_DATA.filter((p) => p.category === activeFilter);
+  const filteredCreative = creativeFilter === 'all'
+    ? CREATIVE_PROJECTS
+    : CREATIVE_PROJECTS.filter((p) => p.category === creativeFilter);
 
-  const handleFilterClick = (filter: 'all' | 'web' | 'gamedev' | 'design' | 'art') => {
+  const handleCreativeFilter = (filter: 'all' | 'design' | 'art') => {
     cyberAudio.playModeSwitch();
-    setActiveFilter(filter);
+    setCreativeFilter(filter);
   };
 
   const getBorderAccent = (color: 'yellow' | 'red' | 'white') => {
@@ -46,239 +42,252 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
     }
   };
 
-  const getCategoryLabel = (cat: 'web' | 'gamedev' | 'design' | 'art') => {
-    switch (cat) {
-      case 'web':
-        return 'WEB & APPS';
-      case 'gamedev':
-        return 'GAME DEV';
-      case 'design':
-        return 'GRAPHIC DESIGN';
-      case 'art':
-        return 'DIGITAL ART';
-    }
-  };
+  const renderCard = (project: ProjectItem) => (
+    <div
+      key={project.id}
+      onMouseEnter={() => cyberAudio.playHover()}
+      className={`group flex flex-col bg-[#0f1016] border border-[#222533] ${getBorderAccent(
+        project.accentColor
+      )} transition-all duration-300 relative overflow-hidden clip-cyber-card hover:shadow-[0_0_25px_rgba(0,0,0,0.8)]`}
+    >
+      {/* Card Image Display */}
+      <div 
+        className="relative aspect-video w-full overflow-hidden bg-[#06080e] cursor-pointer flex items-center justify-center"
+        onClick={() => {
+          cyberAudio.playClick();
+          setSelectedProject(project);
+        }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={project.image}
+          alt={project.title}
+          className={`w-full h-full ${
+            project.id === 'flag-memory-app'
+              ? 'object-contain p-2 max-h-full'
+              : 'object-cover'
+          } group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100`}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f1016] via-transparent to-transparent opacity-75 pointer-events-none" />
+
+        {/* Top Badges */}
+        <div className="absolute top-3 left-3 flex items-center gap-1.5">
+          <span
+            className={`px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${getBadgeAccent(
+              project.accentColor
+            )}`}
+          >
+            {project.category === 'web'
+              ? 'WEB'
+              : project.category === 'gamedev'
+              ? 'GAME'
+              : project.category === 'design'
+              ? 'CANVA'
+              : 'ART'}
+          </span>
+          {project.featured && (
+            <span className="px-2 py-0.5 bg-[#060608]/85 text-[#fcee0a] border border-[#fcee0a]/40 text-[10px] font-bold">
+              FEATURED
+            </span>
+          )}
+        </div>
+
+        {/* Inspect button overlay */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            cyberAudio.playClick();
+            setSelectedProject(project);
+          }}
+          className="absolute bottom-3 right-3 px-2.5 py-1 bg-[#060608]/90 text-xs font-bold text-white border border-[#222533] hover:border-[#fcee0a] hover:text-[#fcee0a] transition-all flex items-center gap-1 cursor-pointer"
+          title="Inspect Details"
+        >
+          <Eye size={12} />
+          <span>VIEW</span>
+        </button>
+      </div>
+
+      {/* Card Body */}
+      <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+        <div>
+          <div className="text-[11px] text-[#8a8f9d] font-mono mb-1">{project.subtitle}</div>
+          <h3 className="text-base sm:text-lg font-bold text-[#f5f6fa] group-hover:text-[#fcee0a] transition-colors mb-2">
+            {project.title}
+          </h3>
+          <p className="text-xs text-[#a0a5b5] line-clamp-2 leading-relaxed mb-4">
+            {project.description}
+          </p>
+        </div>
+
+        <div>
+          {/* Metrics preview */}
+          {project.metrics && (
+            <div className="grid grid-cols-3 gap-1.5 py-2 mb-3 border-y border-[#222533]/80 text-center font-mono">
+              {project.metrics.map((m, idx) => (
+                <div key={idx} className="text-[10px]">
+                  <div className="text-[#8a8f9d] truncate">{m.label}</div>
+                  <div className="font-bold text-[#f5f6fa] truncate">{m.value}</div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-1 mb-3">
+            {project.tags.slice(0, 3).map((tag, idx) => (
+              <span
+                key={idx}
+                className="px-1.5 py-0.5 bg-[#14151f] text-[#8a8f9d] text-[10px] font-mono border border-[#222533]"
+              >
+                {tag}
+              </span>
+            ))}
+            {project.tags.length > 3 && (
+              <span className="px-1 py-0.5 text-[#8a8f9d] text-[10px] font-mono">
+                +{project.tags.length - 3}
+              </span>
+            )}
+          </div>
+
+          {/* Actions Footer */}
+          <div className="pt-2 border-t border-[#222533] flex items-center justify-between gap-2">
+            <button
+              onClick={() => {
+                cyberAudio.playClick();
+                setSelectedProject(project);
+              }}
+              className="text-xs font-bold text-[#fcee0a] hover:underline flex items-center gap-1 cursor-pointer"
+            >
+              <span>Details</span>
+              <span>→</span>
+            </button>
+
+            <div className="flex items-center gap-2">
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => cyberAudio.playClick()}
+                  className="p-1.5 bg-[#14151f] text-[#8a8f9d] hover:text-white border border-[#222533] hover:border-[#fcee0a] transition-all"
+                  title="View on GitHub"
+                >
+                  <GithubIcon size={13} />
+                </a>
+              )}
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => cyberAudio.playClick()}
+                  className="px-2 py-1 bg-[#14151f] hover:bg-[#ff003c] text-white border border-[#222533] hover:border-[#ff003c] transition-all text-[11px] font-bold flex items-center gap-1"
+                  title="Play on itch.io"
+                >
+                  <Gamepad2 size={13} />
+                  <span>itch.io</span>
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <section id="projects" className="py-16 md:py-24 border-b border-[#222533] bg-[#08080a] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-[#222533]">
+        {/* ======================================================== */}
+        {/* PART 1: TECHNICAL & CODE WORKS (WEB APPS & GAMES)         */}
+        {/* ======================================================== */}
+        <div className="mb-8 pb-4 border-b border-[#222533]">
+          <div className="flex items-center gap-2 text-xs font-mono text-[#fcee0a] uppercase tracking-widest mb-1.5">
+            <Code2 size={14} />
+            <span>01 // TECHNICAL &amp; CODE WORKS</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-[#f5f6fa]">
+            WEB APPS, <span className="text-[#fcee0a]">BIOMETRICS &amp; GAME DEV</span>
+          </h2>
+          <p className="text-xs sm:text-sm text-[#8a8f9d] mt-1 max-w-xl">
+            Front-end applications in JavaScript &amp; HTML/CSS, behavioral biometric dynamics, algorithmic simulations, and published Godot title.
+          </p>
+        </div>
+
+        {/* Technical Grid (4 items) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
+          {TECHNICAL_PROJECTS.map((project) => renderCard(project))}
+        </div>
+
+        {/* ======================================================== */}
+        {/* SECTION DIVIDER WITH SUBSTANTIAL GAP                     */}
+        {/* ======================================================== */}
+        <div className="relative my-12 flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-[#222533]" />
+          </div>
+          <div className="relative px-4 bg-[#08080a] flex items-center gap-3 text-xs font-mono text-[#8a8f9d]">
+            <span className="w-1.5 h-1.5 bg-[#ff003c]" />
+            <span className="tracking-widest uppercase">CREATIVE DOMAIN SEPARATION</span>
+            <span className="w-1.5 h-1.5 bg-[#fcee0a]" />
+          </div>
+        </div>
+
+        {/* ======================================================== */}
+        {/* PART 2: VISUAL DESIGN & DIGITAL ART (CANVA & IBIS PAINT)  */}
+        {/* ======================================================== */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 pb-4 border-b border-[#222533]">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono text-[#fcee0a] uppercase tracking-widest mb-2">
-              <span className="w-2 h-2 bg-[#fcee0a]" />
-              <span>PORTFOLIO SHOWCASE</span>
+            <div className="flex items-center gap-2 text-xs font-mono text-[#ff003c] uppercase tracking-widest mb-1.5">
+              <Palette size={14} />
+              <span>02 // VISUAL DESIGN &amp; DIGITAL ART</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-[#f5f6fa]">
-              PROJECTS, <span className="text-[#fcee0a]">DESIGN &amp; ART</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-[#f5f6fa]">
+              CANVA GRAPHICS &amp; <span className="text-[#ff003c]">DIGITAL ARTWORKS</span>
             </h2>
-            <p className="text-xs sm:text-sm text-[#8a8f9d] mt-2 max-w-xl">
-              Web applications, behavioral biometric systems, algorithmic simulations, published itch.io game, and original graphic design &amp; digital art.
+            <p className="text-xs sm:text-sm text-[#8a8f9d] mt-1 max-w-xl">
+              Posters, editorial typography, and UI onboarding flows in Canva; original digital illustrations and concept art in Ibis Paint X.
             </p>
           </div>
 
-          {/* Interactive Category Filter Tabs */}
+          {/* Sub-filters for creative work */}
           <div className="flex flex-wrap gap-2 text-xs font-bold font-mono">
             <button
-              onClick={() => handleFilterClick('all')}
-              className={`px-3 py-1.5 sm:px-3.5 sm:py-2 transition-all border clip-cyber-button cursor-pointer ${
-                activeFilter === 'all'
-                  ? 'bg-[#fcee0a] text-black border-[#fcee0a]'
-                  : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white hover:border-[#8a8f9d]'
-              }`}
-            >
-              All Works ({PROJECTS_DATA.length})
-            </button>
-
-            <button
-              onClick={() => handleFilterClick('web')}
-              className={`px-3 py-1.5 sm:px-3.5 sm:py-2 transition-all border clip-cyber-button cursor-pointer ${
-                activeFilter === 'web'
-                  ? 'bg-[#fcee0a] text-black border-[#fcee0a]'
-                  : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white hover:border-[#8a8f9d]'
-              }`}
-            >
-              Web &amp; Apps (3)
-            </button>
-
-            <button
-              onClick={() => handleFilterClick('gamedev')}
-              className={`px-3 py-1.5 sm:px-3.5 sm:py-2 transition-all border clip-cyber-button cursor-pointer ${
-                activeFilter === 'gamedev'
-                  ? 'bg-emerald-400 text-black border-emerald-400'
-                  : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white hover:border-emerald-400'
-              }`}
-            >
-              Game Dev (1)
-            </button>
-
-            <button
-              onClick={() => handleFilterClick('design')}
-              className={`px-3 py-1.5 sm:px-3.5 sm:py-2 transition-all border clip-cyber-button cursor-pointer ${
-                activeFilter === 'design'
+              onClick={() => handleCreativeFilter('all')}
+              className={`px-3 py-1.5 transition-all border clip-cyber-button cursor-pointer ${
+                creativeFilter === 'all'
                   ? 'bg-[#ff003c] text-white border-[#ff003c]'
-                  : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white hover:border-[#ff003c]'
+                  : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white'
               }`}
             >
-              Canva Design (3)
+              All Creative ({CREATIVE_PROJECTS.length})
             </button>
-
             <button
-              onClick={() => handleFilterClick('art')}
-              className={`px-3 py-1.5 sm:px-3.5 sm:py-2 transition-all border clip-cyber-button cursor-pointer ${
-                activeFilter === 'art'
-                  ? 'bg-white text-black border-white'
-                  : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white hover:border-white'
+              onClick={() => handleCreativeFilter('design')}
+              className={`px-3 py-1.5 transition-all border clip-cyber-button cursor-pointer ${
+                creativeFilter === 'design'
+                  ? 'bg-[#fcee0a] text-black border-[#fcee0a]'
+                  : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white'
               }`}
             >
-              Digital Art (3)
+              Canva Graphics (3)
+            </button>
+            <button
+              onClick={() => handleCreativeFilter('art')}
+              className={`px-3 py-1.5 transition-all border clip-cyber-button cursor-pointer ${
+                creativeFilter === 'art'
+                  ? 'bg-white text-black border-white'
+                  : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white'
+              }`}
+            >
+              Ibis Paint X (3)
             </button>
           </div>
         </div>
 
-        {/* Project Cards Grid */}
+        {/* Creative Grid (6 items) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              onMouseEnter={() => cyberAudio.playHover()}
-              className={`group flex flex-col bg-[#0f1016] border border-[#222533] ${getBorderAccent(
-                project.accentColor
-              )} transition-all duration-300 relative overflow-hidden clip-cyber-card hover:shadow-[0_0_25px_rgba(0,0,0,0.8)]`}
-            >
-              {/* Card Image */}
-              <div 
-                className="relative aspect-video w-full overflow-hidden bg-[#060608] cursor-pointer"
-                onClick={() => {
-                  cyberAudio.playClick();
-                  setSelectedProject(project);
-                }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0f1016] via-transparent to-transparent opacity-80" />
-
-                {/* Category & Status Badges */}
-                <div className="absolute top-3 left-3 flex items-center gap-1.5">
-                  <span
-                    className={`px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${getBadgeAccent(
-                      project.accentColor
-                    )}`}
-                  >
-                    {getCategoryLabel(project.category)}
-                  </span>
-                  {project.featured && (
-                    <span className="px-2 py-0.5 bg-[#060608]/80 text-[#fcee0a] border border-[#fcee0a]/40 text-[10px] font-bold">
-                      FEATURED
-                    </span>
-                  )}
-                </div>
-
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    cyberAudio.playClick();
-                    setSelectedProject(project);
-                  }}
-                  className="absolute bottom-3 right-3 px-2.5 py-1 bg-[#060608]/90 text-xs font-bold text-white border border-[#222533] hover:border-[#fcee0a] hover:text-[#fcee0a] transition-all flex items-center gap-1 cursor-pointer"
-                  title="Inspect Details"
-                >
-                  <Eye size={12} />
-                  <span>VIEW FULL</span>
-                </button>
-              </div>
-
-              {/* Card Body */}
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <div>
-                  <div className="text-[11px] text-[#8a8f9d] font-mono mb-1">{project.subtitle}</div>
-                  <h3 className="text-lg font-bold text-[#f5f6fa] group-hover:text-[#fcee0a] transition-colors mb-2.5">
-                    {project.title}
-                  </h3>
-                  <p className="text-xs text-[#a0a5b5] line-clamp-3 leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-                </div>
-
-                <div>
-                  {/* Metrics preview */}
-                  {project.metrics && (
-                    <div className="grid grid-cols-3 gap-1.5 py-2 mb-3 border-y border-[#222533]/80 text-center">
-                      {project.metrics.map((m, idx) => (
-                        <div key={idx} className="text-[10px]">
-                          <div className="text-[#8a8f9d] truncate">{m.label}</div>
-                          <div className="font-bold text-[#f5f6fa] truncate">{m.value}</div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {project.tags.slice(0, 4).map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="px-1.5 py-0.5 bg-[#14151f] text-[#8a8f9d] text-[10px] font-mono border border-[#222533]"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                    {project.tags.length > 4 && (
-                      <span className="px-1 py-0.5 text-[#8a8f9d] text-[10px]">
-                        +{project.tags.length - 4}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Actions Footer */}
-                  <div className="pt-2 border-t border-[#222533] flex items-center justify-between gap-2">
-                    <button
-                      onClick={() => {
-                        cyberAudio.playClick();
-                        setSelectedProject(project);
-                      }}
-                      className="text-xs font-bold text-[#fcee0a] hover:underline flex items-center gap-1 cursor-pointer"
-                    >
-                      <span>View Details</span>
-                      <span>→</span>
-                    </button>
-
-                    <div className="flex items-center gap-2">
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() => cyberAudio.playClick()}
-                          className="p-1.5 bg-[#14151f] text-[#8a8f9d] hover:text-white border border-[#222533] hover:border-[#fcee0a] transition-all"
-                          title="View on GitHub"
-                        >
-                          <GithubIcon size={13} />
-                        </a>
-                      )}
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() => cyberAudio.playClick()}
-                          className="px-2 py-1 bg-[#14151f] hover:bg-[#ff003c] text-white border border-[#222533] hover:border-[#ff003c] transition-all text-[11px] font-bold flex items-center gap-1"
-                          title="Play on itch.io"
-                        >
-                          <Gamepad2 size={13} />
-                          <span>itch.io</span>
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+          {filteredCreative.map((project) => renderCard(project))}
         </div>
       </div>
 

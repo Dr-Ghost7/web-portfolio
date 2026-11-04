@@ -20,7 +20,7 @@ export default async function HomePage() {
       <Hero />
 
       {/* Sector 01: Dev & Graphic Design Dual Showcase with Lightbox Inspector */}
-      <ProjectsDeck initialFilter="all" />
+      <ProjectsDeck />
 
       {/* Sector 02: Real-time Live GitHub Pipeline & Filter Deck */}
       <GitHubStatsDeck initialProfile={profile} initialRepos={repos} />
