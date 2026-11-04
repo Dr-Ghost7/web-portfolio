@@ -1,0 +1,143 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { Volume2, VolumeX, Terminal, ExternalLink } from 'lucide-react';
+import { GithubIcon } from '@/components/icons/GithubIcon';
+import { cyberAudio } from '@/lib/sounds';
+
+interface NavbarProps {
+  githubLogin?: string;
+}
+
+export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
+  const [time, setTime] = useState<string>('');
+  const [audioEnabled, setAudioEnabled] = useState<boolean>(true);
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      setTime(
+        now.toLocaleTimeString('en-US', {
+          hour12: false,
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+        })
+      );
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const toggleSound = () => {
+    const next = !audioEnabled;
+    setAudioEnabled(next);
+    cyberAudio.enabled = next;
+    if (next) cyberAudio.playModeSwitch();
+  };
+
+  return (
+    <header className="sticky top-0 z-40 w-full border-b border-[#222533] bg-[#060608]/90 backdrop-blur-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between text-xs tracking-wider">
+        {/* Left: System Status & Logo */}
+        <div className="flex items-center space-x-4">
+          <a
+            href="#"
+            onClick={() => cyberAudio.playClick()}
+            className="flex items-center gap-2 group cursor-pointer"
+          >
+            <div className="w-8 h-8 bg-[#13141c] border border-[#fcee0a] flex items-center justify-center font-bold text-[#fcee0a] group-hover:bg-[#fcee0a] group-hover:text-black transition-all">
+              SG
+            </div>
+            <div>
+              <div className="flex items-center gap-1.5 font-bold text-sm tracking-widest text-[#f5f6fa] group-hover:text-[#fcee0a] transition-colors">
+                <span>SINJINI GHOSH</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#fcee0a] animate-ping" />
+              </div>
+              <div className="text-[10px] text-[#8a8f9d] uppercase">
+                SYS_ID: <span className="text-[#ff003c]">DR-GHOST7</span>
+              </div>
+            </div>
+          </a>
+
+          <div className="hidden lg:flex items-center gap-2 px-2.5 py-1 border border-[#222533] bg-[#0d0e13] text-[#8a8f9d]">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-[11px] text-emerald-400 font-medium">READY_FOR_DEPLOYMENT</span>
+          </div>
+        </div>
+
+        {/* Center: Quick Section Links */}
+        <nav className="hidden md:flex items-center space-x-6 text-[#8a8f9d]">
+          <a
+            href="#projects"
+            onMouseEnter={() => cyberAudio.playHover()}
+            onClick={() => cyberAudio.playClick()}
+            className="hover:text-[#fcee0a] transition-colors flex items-center gap-1"
+          >
+            <span className="text-[#fcee0a]">//</span> 01.WORKS
+          </a>
+          <a
+            href="#github"
+            onMouseEnter={() => cyberAudio.playHover()}
+            onClick={() => cyberAudio.playClick()}
+            className="hover:text-[#fcee0a] transition-colors flex items-center gap-1"
+          >
+            <span className="text-[#fcee0a]">//</span> 02.GITHUB
+          </a>
+          <a
+            href="#skills"
+            onMouseEnter={() => cyberAudio.playHover()}
+            onClick={() => cyberAudio.playClick()}
+            className="hover:text-[#fcee0a] transition-colors flex items-center gap-1"
+          >
+            <span className="text-[#fcee0a]">//</span> 03.STACK
+          </a>
+          <a
+            href="#contact"
+            onMouseEnter={() => cyberAudio.playHover()}
+            onClick={() => cyberAudio.playClick()}
+            className="hover:text-[#ff003c] transition-colors flex items-center gap-1"
+          >
+            <span className="text-[#ff003c]">//</span> 04.TRANSMISSION
+          </a>
+        </nav>
+
+        {/* Right: Audio toggle, Telemetry Clock, GitHub */}
+        <div className="flex items-center space-x-3">
+          {/* Clock */}
+          <div className="hidden sm:flex items-center px-2 py-1 bg-[#0d0e13] border border-[#222533] text-[#8a8f9d] text-[11px]">
+            <span className="text-[#fcee0a] mr-1.5">UTC</span>
+            <span>{time || '--:--:--'}</span>
+          </div>
+
+          {/* Sound Toggle */}
+          <button
+            onClick={toggleSound}
+            title={audioEnabled ? 'Mute Cyber Audio' : 'Enable Cyber Audio'}
+            className={`p-2 border transition-all cursor-pointer ${
+              audioEnabled
+                ? 'border-[#fcee0a]/60 text-[#fcee0a] bg-[#fcee0a]/10 hover:bg-[#fcee0a]/20'
+                : 'border-[#222533] text-[#8a8f9d] hover:text-[#f5f6fa]'
+            }`}
+          >
+            {audioEnabled ? <Volume2 size={15} /> : <VolumeX size={15} />}
+          </button>
+
+          {/* GitHub Profile Button */}
+          <a
+            href={`https://github.com/${githubLogin}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => cyberAudio.playClick()}
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-[#13141c] hover:bg-[#fcee0a] text-[#f5f6fa] hover:text-black border border-[#222533] hover:border-[#fcee0a] transition-all font-bold clip-cyber-button"
+          >
+            <GithubIcon size={14} />
+            <span className="hidden sm:inline">GITHUB</span>
+            <ExternalLink size={12} className="opacity-70" />
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+}

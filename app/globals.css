@@ -1,26 +1,156 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --cyber-black: #060608;
+  --cyber-dark: #0d0e13;
+  --cyber-card: #13141c;
+  --cyber-card-hover: #191b26;
+  --cyber-border: #222533;
+  --cyber-yellow: #fcee0a;
+  --cyber-yellow-glow: rgba(252, 238, 10, 0.45);
+  --cyber-red: #ff003c;
+  --cyber-red-glow: rgba(255, 0, 60, 0.5);
+  --cyber-grey: #8a8f9d;
+  --cyber-light: #f5f6fa;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cyber-black);
+  color: var(--cyber-light);
+  font-family: var(--font-geist-mono), monospace, system-ui;
+  overflow-x: hidden;
+  selection-background-color: var(--cyber-yellow);
+  selection-color: #000;
+}
+
+::selection {
+  background: var(--cyber-yellow);
+  color: #000000;
+}
+
+/* Cyberpunk Grid Background */
+.cyber-grid-bg {
+  background-color: #060608;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.cyber-grid-dots {
+  background-image: radial-gradient(rgba(252, 238, 10, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Chamfered Cyber Clip-Paths */
+.clip-cyber-button {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 12px) 0,
+    100% 12px,
+    100% 100%,
+    12px 100%,
+    0 calc(100% - 12px)
+  );
+}
+
+.clip-cyber-card {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 20px) 0,
+    100% 20px,
+    100% 100%,
+    20px 100%,
+    0 calc(100% - 20px)
+  );
+}
+
+.clip-cyber-corner {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+}
+
+.clip-tag-slant {
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+
+/* Neon Glows */
+.glow-yellow {
+  box-shadow: 0 0 18px var(--cyber-yellow-glow);
+}
+
+.glow-red {
+  box-shadow: 0 0 18px var(--cyber-red-glow);
+}
+
+.text-glow-yellow {
+  text-shadow: 0 0 10px rgba(252, 238, 10, 0.65), 0 0 20px rgba(252, 238, 10, 0.3);
+}
+
+.text-glow-red {
+  text-shadow: 0 0 10px rgba(255, 0, 60, 0.7), 0 0 20px rgba(255, 0, 60, 0.35);
+}
+
+.border-glow-yellow {
+  border-color: var(--cyber-yellow);
+  box-shadow: inset 0 0 8px rgba(252, 238, 10, 0.25), 0 0 12px rgba(252, 238, 10, 0.35);
+}
+
+.border-glow-red {
+  border-color: var(--cyber-red);
+  box-shadow: inset 0 0 8px rgba(255, 0, 60, 0.3), 0 0 12px rgba(255, 0, 60, 0.4);
+}
+
+/* Subtle Scanline Overlay */
+.scanline-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+/* Custom Cyber Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060608;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #252839;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyber-yellow);
+}
+
+/* Glitch Animation Keyframes */
+@keyframes cyber-glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-1px, -1px);
+  }
+  60% {
+    transform: translate(2px, 1px);
+  }
+  80% {
+    transform: translate(1px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.glitch-hover:hover {
+  animation: cyber-glitch 0.25s infinite;
 }
