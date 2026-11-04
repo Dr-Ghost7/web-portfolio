@@ -4,22 +4,22 @@ import React, { useState } from 'react';
 import { PROJECTS_DATA, ProjectItem } from '@/lib/projects-data';
 import { GraphicDesignModal } from '@/components/GraphicDesignModal';
 import { cyberAudio } from '@/lib/sounds';
-import { ExternalLink, Eye } from 'lucide-react';
+import { ExternalLink, Eye, Gamepad2, Palette, Code2, Sparkles } from 'lucide-react';
 import { GithubIcon } from '@/components/icons/GithubIcon';
 
 interface ProjectsDeckProps {
-  initialFilter?: 'all' | 'web' | 'design' | 'gamedev';
+  initialFilter?: 'all' | 'web' | 'gamedev' | 'design' | 'art';
 }
 
 export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
-  const [activeFilter, setActiveFilter] = useState<'all' | 'web' | 'design' | 'gamedev'>(initialFilter);
+  const [activeFilter, setActiveFilter] = useState<'all' | 'web' | 'gamedev' | 'design' | 'art'>(initialFilter);
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
   const filteredProjects = activeFilter === 'all'
     ? PROJECTS_DATA
     : PROJECTS_DATA.filter((p) => p.category === activeFilter);
 
-  const handleFilterClick = (filter: 'all' | 'web' | 'design' | 'gamedev') => {
+  const handleFilterClick = (filter: 'all' | 'web' | 'gamedev' | 'design' | 'art') => {
     cyberAudio.playModeSwitch();
     setActiveFilter(filter);
   };
@@ -46,6 +46,19 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
     }
   };
 
+  const getCategoryLabel = (cat: 'web' | 'gamedev' | 'design' | 'art') => {
+    switch (cat) {
+      case 'web':
+        return 'WEB & APPS';
+      case 'gamedev':
+        return 'GAME DEV';
+      case 'design':
+        return 'GRAPHIC DESIGN';
+      case 'art':
+        return 'DIGITAL ART';
+    }
+  };
+
   return (
     <section id="projects" className="py-16 md:py-24 border-b border-[#222533] bg-[#08080a] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -57,10 +70,10 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
               <span>PORTFOLIO SHOWCASE</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-[#f5f6fa]">
-              PROJECTS &amp; <span className="text-[#fcee0a]">CREATIVE WORKS</span>
+              PROJECTS, <span className="text-[#fcee0a]">DESIGN &amp; ART</span>
             </h2>
             <p className="text-xs sm:text-sm text-[#8a8f9d] mt-2 max-w-xl">
-              Web applications, behavioral biometric experiments, algorithmic pathfinding, published Godot game, and digital graphics.
+              Web applications, behavioral biometric systems, algorithmic simulations, published itch.io game, and original graphic design &amp; digital art.
             </p>
           </div>
 
@@ -68,46 +81,57 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
           <div className="flex flex-wrap gap-2 text-xs font-bold font-mono">
             <button
               onClick={() => handleFilterClick('all')}
-              className={`px-3.5 py-2 transition-all border clip-cyber-button cursor-pointer ${
+              className={`px-3 py-1.5 sm:px-3.5 sm:py-2 transition-all border clip-cyber-button cursor-pointer ${
                 activeFilter === 'all'
                   ? 'bg-[#fcee0a] text-black border-[#fcee0a]'
                   : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white hover:border-[#8a8f9d]'
               }`}
             >
-              [ All Works ({PROJECTS_DATA.length}) ]
+              All Works ({PROJECTS_DATA.length})
             </button>
 
             <button
               onClick={() => handleFilterClick('web')}
-              className={`px-3.5 py-2 transition-all border clip-cyber-button cursor-pointer ${
+              className={`px-3 py-1.5 sm:px-3.5 sm:py-2 transition-all border clip-cyber-button cursor-pointer ${
                 activeFilter === 'web'
                   ? 'bg-[#fcee0a] text-black border-[#fcee0a]'
                   : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white hover:border-[#8a8f9d]'
               }`}
             >
-              [ Web &amp; Apps ]
+              Web &amp; Apps (3)
+            </button>
+
+            <button
+              onClick={() => handleFilterClick('gamedev')}
+              className={`px-3 py-1.5 sm:px-3.5 sm:py-2 transition-all border clip-cyber-button cursor-pointer ${
+                activeFilter === 'gamedev'
+                  ? 'bg-emerald-400 text-black border-emerald-400'
+                  : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white hover:border-emerald-400'
+              }`}
+            >
+              Game Dev (1)
             </button>
 
             <button
               onClick={() => handleFilterClick('design')}
-              className={`px-3.5 py-2 transition-all border clip-cyber-button cursor-pointer ${
+              className={`px-3 py-1.5 sm:px-3.5 sm:py-2 transition-all border clip-cyber-button cursor-pointer ${
                 activeFilter === 'design'
                   ? 'bg-[#ff003c] text-white border-[#ff003c]'
                   : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white hover:border-[#ff003c]'
               }`}
             >
-              [ Canva &amp; Art ]
+              Canva Design (3)
             </button>
 
             <button
-              onClick={() => handleFilterClick('gamedev')}
-              className={`px-3.5 py-2 transition-all border clip-cyber-button cursor-pointer ${
-                activeFilter === 'gamedev'
+              onClick={() => handleFilterClick('art')}
+              className={`px-3 py-1.5 sm:px-3.5 sm:py-2 transition-all border clip-cyber-button cursor-pointer ${
+                activeFilter === 'art'
                   ? 'bg-white text-black border-white'
                   : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white hover:border-white'
               }`}
             >
-              [ Game Dev ]
+              Digital Art (3)
             </button>
           </div>
         </div>
@@ -123,7 +147,13 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
               )} transition-all duration-300 relative overflow-hidden clip-cyber-card hover:shadow-[0_0_25px_rgba(0,0,0,0.8)]`}
             >
               {/* Card Image */}
-              <div className="relative aspect-video w-full overflow-hidden bg-[#060608]">
+              <div 
+                className="relative aspect-video w-full overflow-hidden bg-[#060608] cursor-pointer"
+                onClick={() => {
+                  cyberAudio.playClick();
+                  setSelectedProject(project);
+                }}
+              >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={project.image}
@@ -139,11 +169,7 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
                       project.accentColor
                     )}`}
                   >
-                    {project.category === 'web'
-                      ? 'WEB'
-                      : project.category === 'design'
-                      ? 'GRAPHICS'
-                      : 'GAME'}
+                    {getCategoryLabel(project.category)}
                   </span>
                   {project.featured && (
                     <span className="px-2 py-0.5 bg-[#060608]/80 text-[#fcee0a] border border-[#fcee0a]/40 text-[10px] font-bold">
@@ -153,7 +179,8 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
                 </div>
 
                 <button
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.stopPropagation();
                     cyberAudio.playClick();
                     setSelectedProject(project);
                   }}
@@ -161,7 +188,7 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
                   title="Inspect Details"
                 >
                   <Eye size={12} />
-                  <span>DETAILS</span>
+                  <span>VIEW FULL</span>
                 </button>
               </div>
 
@@ -239,10 +266,11 @@ export function ProjectsDeck({ initialFilter = 'all' }: ProjectsDeckProps) {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={() => cyberAudio.playClick()}
-                          className="p-1.5 bg-[#14151f] text-[#8a8f9d] hover:text-[#fcee0a] border border-[#222533] hover:border-[#fcee0a] transition-all"
-                          title="Open Game Link"
+                          className="px-2 py-1 bg-[#14151f] hover:bg-[#ff003c] text-white border border-[#222533] hover:border-[#ff003c] transition-all text-[11px] font-bold flex items-center gap-1"
+                          title="Play on itch.io"
                         >
-                          <ExternalLink size={13} />
+                          <Gamepad2 size={13} />
+                          <span>itch.io</span>
                         </a>
                       )}
                     </div>

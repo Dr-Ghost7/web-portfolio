@@ -1,7 +1,7 @@
 export interface ProjectItem {
   id: string;
   title: string;
-  category: 'web' | 'design' | 'gamedev';
+  category: 'web' | 'gamedev' | 'design' | 'art';
   subtitle: string;
   description: string;
   tags: string[];
@@ -21,7 +21,7 @@ export interface ProjectItem {
 }
 
 export const PROJECTS_DATA: ProjectItem[] = [
-  // 1. TypeLock (Web / Behavioral Biometrics)
+  // --- 1. WEB & APPLICATIONS ---
   {
     id: 'typelock',
     title: 'TypeLock',
@@ -41,9 +41,9 @@ export const PROJECTS_DATA: ProjectItem[] = [
     accentColor: 'yellow',
     details: {
       role: 'Sole Developer & Designer',
-      timeline: 'Active Project',
+      timeline: 'Web Application',
       challenges:
-        'Accurately extracting sub-millisecond dwell times and pointer events across various touchscreens, and building an explainable model based on mean and standard deviation without black-box ML dependencies.',
+        'Extracting sub-millisecond dwell times and pointer events across various touchscreens, and building an explainable model based on mean and standard deviation without black-box ML dependencies.',
       deliverables: [
         'Live rhythm oscilloscope tracking dwell and flight times in real time',
         'Enrollment and biometric verification workflow',
@@ -52,8 +52,6 @@ export const PROJECTS_DATA: ProjectItem[] = [
       palette: ['#0a0d12', '#0f1420', '#3ee08a', '#f2a65a', '#5b9dff'],
     },
   },
-
-  // 2. Flag Memory App (Web / Cognitive App)
   {
     id: 'flag-memory-app',
     title: 'Flag Memory',
@@ -84,8 +82,6 @@ export const PROJECTS_DATA: ProjectItem[] = [
       palette: ['#060608', '#0d111a', '#00e676', '#fcee0a', '#ff003c'],
     },
   },
-
-  // 3. A* vs Q-Learning Simulation (AI & Algorithm Visualization)
   {
     id: 'astar-vs-qlearning',
     title: 'A* vs. Q-Learning Simulation',
@@ -117,21 +113,21 @@ export const PROJECTS_DATA: ProjectItem[] = [
     },
   },
 
-  // 4. Gangling Bro's Forest (Project2alpha - Published on itch.io)
+  // --- 2. GAME DEVELOPMENT ---
   {
     id: 'gangling-bros-forest',
     title: "Gangling Bro's Forest",
     category: 'gamedev',
     subtitle: 'Published Indie Game on itch.io (Project2alpha)',
     description:
-      'Atmospheric indie game published on itch.io. Developed using Godot Engine and GDScript, featuring custom player mechanics, environmental traversal, and an eerie forest atmosphere.',
-    tags: ['Godot Engine', 'GDScript', 'Game Development', 'itch.io', 'Atmospheric'],
+      'Atmospheric indie game published on itch.io. Developed using Godot Engine and GDScript, featuring custom player movement physics, environmental traversal, and an eerie atmospheric forest mood.',
+    tags: ['Godot Engine', 'GDScript', 'Game Dev', 'itch.io', 'Atmospheric'],
     githubUrl: 'https://github.com/Dr-Ghost7/Project2alpha',
-    liveUrl: 'https://itch.io',
+    liveUrl: 'https://missstaticmoth.itch.io/gangling-bros-forest',
     featured: true,
     metrics: [
+      { label: 'PLATFORM', value: 'ITCH.IO' },
       { label: 'ENGINE', value: 'GODOT ENGINE' },
-      { label: 'STATUS', value: 'PUBLISHED (ITCH.IO)' },
       { label: 'SCRIPTING', value: 'GDSCRIPT' },
     ],
     image: '/projects/gangling-forest-preview.svg',
@@ -150,65 +146,181 @@ export const PROJECTS_DATA: ProjectItem[] = [
     },
   },
 
-  // 5. Canva Graphic Design & Visual Layouts
+  // --- 3. GRAPHIC DESIGN (CANVA) ---
   {
-    id: 'canva-design-works',
-    title: 'Canva Visual & Graphic Works',
+    id: 'ampliverse',
+    title: 'Ampliverse',
     category: 'design',
-    subtitle: 'Brand Systems, Posters & Promotional Layouts',
+    subtitle: 'Visual Design & Poster Layout (Canva)',
     description:
-      'Collection of visual design projects created using Canva. Encompasses brand identity mockups, event posters, typography compositions, presentation decks, and social media visuals with high-contrast color balance.',
-    tags: ['Canva', 'Graphic Design', 'Visual Hierarchy', 'Typography', 'Branding'],
+      'High-impact typographic and graphic design poster crafted in Canva. Explores vertical poster composition, spatial contrast, color harmony, and bold modern visual messaging.',
+    tags: ['Canva', 'Graphic Design', 'Poster Design', 'Typography', 'Visual Composition'],
     featured: true,
     metrics: [
       { label: 'TOOL', value: 'CANVA' },
-      { label: 'FOCUS', value: 'POSTERS & BRANDING' },
-      { label: 'LAYOUT', value: 'HIGH CONTRAST' },
+      { label: 'FORMAT', value: 'POSTER' },
+      { label: 'STYLE', value: 'HIGH CONTRAST' },
     ],
-    image: '/projects/canva-preview.svg',
+    image: '/graphics-design/ampliverse.jpg',
     accentColor: 'yellow',
     details: {
-      role: 'Visual Designer',
-      timeline: 'Ongoing Design Portfolio',
+      role: 'Graphic Designer',
+      timeline: 'Design Showcase',
       challenges:
-        'Establishing clean typographical hierarchy, compelling visual focal points, and cohesive color schemes tailored for digital and print formats.',
+        'Balancing typographic weight and negative space to establish an eye-catching focal hierarchy across digital and print viewing distances.',
       deliverables: [
-        'Promotional posters and event graphic layouts',
-        'Structured presentation decks with clear information flow',
-        'Social media visual kits and branded assets',
+        'Print and digital poster layout',
+        'Cohesive color grading and contrast tuning',
+        'Scalable graphic layout in Canva',
       ],
       palette: ['#0d0e14', '#1a1d2e', '#00c4cc', '#fcee0a', '#ff003c'],
     },
   },
-
-  // 6. Ibis Paint X Digital Art & Concepts
   {
-    id: 'ibispaint-artworks',
-    title: 'Ibis Paint X Digital Art',
+    id: 'ignatius',
+    title: 'Ignatius',
     category: 'design',
-    subtitle: 'Character Concepts, Digital Illustrations & Game Art',
+    subtitle: 'Key Visual & Character Graphic Design (Canva)',
     description:
-      'Digital artwork, character design concepts, and visual assets illustrated using Ibis Paint X. Focused on dynamic brushwork, concept ideation for games, and atmospheric color grading.',
-    tags: ['Ibis Paint X', 'Digital Illustration', 'Game Art', 'Concept Design'],
+      'Character-driven graphic design composition with bold typographic framing, created in Canva. Combines character focal elements with structured modern editorial layout.',
+    tags: ['Canva', 'Graphic Design', 'Key Visual', 'Typography', 'Editorial Layout'],
+    featured: true,
+    metrics: [
+      { label: 'TOOL', value: 'CANVA' },
+      { label: 'RESOLUTION', value: '1920 x 1920' },
+      { label: 'GENRE', value: 'KEY VISUAL' },
+    ],
+    image: '/graphics-design/ignatius.png',
+    accentColor: 'red',
+    details: {
+      role: 'Graphic Designer',
+      timeline: 'Key Visual Design',
+      challenges:
+        'Integrating illustrative focal art with modern typographic framing and layered graphic badges.',
+      deliverables: [
+        'High-resolution square key visual (1920x1920)',
+        'Editorial layout typography composition',
+        'Exported social media graphic kit',
+      ],
+      palette: ['#0a0a0c', '#181820', '#ff003c', '#ffffff', '#8a8f9d'],
+    },
+  },
+  {
+    id: 'zda-onboarding',
+    title: 'ZDA Onboarding',
+    category: 'design',
+    subtitle: 'UI Onboarding Layout & Visual Communication (Canva)',
+    description:
+      'User onboarding layout and instructional visual communication designed in Canva. Focused on clarity, readability, structured iconographic hierarchy, and intuitive information digestion.',
+    tags: ['Canva', 'UI/UX Design', 'Onboarding Layout', 'Information Design'],
+    featured: false,
+    metrics: [
+      { label: 'TOOL', value: 'CANVA' },
+      { label: 'APPLICATION', value: 'ONBOARDING UI' },
+      { label: 'STRUCTURE', value: 'STEP-BY-STEP' },
+    ],
+    image: '/graphics-design/zda-onboarding.png',
+    accentColor: 'white',
+    details: {
+      role: 'UI Designer',
+      timeline: 'UI & Communication Design',
+      challenges:
+        'Designing a frictionless visual onboarding flow that communicates instructions clearly at a single glance.',
+      deliverables: [
+        'Clean onboarding card layout',
+        'Consistent iconography and color tokens',
+        'User guidance structure designed in Canva',
+      ],
+      palette: ['#0f1118', '#1a1f2e', '#3ee08a', '#5b9dff', '#ffffff'],
+    },
+  },
+
+  // --- 4. DIGITAL ART (IBIS PAINT X) ---
+  {
+    id: 'ghost-art',
+    title: 'Ghost',
+    category: 'art',
+    subtitle: 'Atmospheric Digital Painting (Ibis Paint X)',
+    description:
+      'High-resolution atmospheric digital painting created in Ibis Paint X (3400x2105 master). Demonstrates nuanced digital brushwork, ambient low-light values, environmental depth, and character silhouette rendering.',
+    tags: ['Ibis Paint X', 'Digital Painting', 'Mood & Lighting', 'Brushwork', 'Illustration'],
     featured: true,
     metrics: [
       { label: 'TOOL', value: 'IBIS PAINT X' },
-      { label: 'MEDIUM', value: 'DIGITAL DRAWING' },
-      { label: 'ART STYLE', value: 'CONCEPT & GAME ART' },
+      { label: 'CANVAS', value: '3400 x 2105' },
+      { label: 'STYLE', value: 'ATMOSPHERIC' },
     ],
-    image: '/projects/ibispaint-preview.svg',
+    image: '/digital-art/ghost.png',
+    accentColor: 'yellow',
+    details: {
+      role: 'Digital Illustrator',
+      timeline: 'Digital Artwork',
+      challenges:
+        'Rendering subtle ambient lighting and luminous neon contrast against deep shadows to establish a palpable, cinematic mood.',
+      deliverables: [
+        'Full 3.4K master digital illustration (3400x2105)',
+        'Multi-layer shading and atmospheric haze',
+        'Expressive brushwork and character rendering',
+      ],
+      palette: ['#040507', '#0e121a', '#fcee0a', '#00e676', '#ffffff'],
+    },
+  },
+  {
+    id: 'bookstore-art',
+    title: 'BookStore',
+    category: 'art',
+    subtitle: 'Environmental Digital Illustration (Ibis Paint X)',
+    description:
+      'Intimate interior and architectural digital illustration crafted in Ibis Paint X. Explores cozy ambient perspective, line work, warm palette accents, and detailed prop composition.',
+    tags: ['Ibis Paint X', 'Environment Art', 'Digital Painting', 'Interior Scene', 'Illustration'],
+    featured: true,
+    metrics: [
+      { label: 'TOOL', value: 'IBIS PAINT X' },
+      { label: 'GENRE', value: 'ENVIRONMENT' },
+      { label: 'CANVAS', value: '1280 x 1280' },
+    ],
+    image: '/digital-art/bookstore.png',
+    accentColor: 'red',
+    details: {
+      role: 'Digital Illustrator',
+      timeline: 'Environment Art',
+      challenges:
+        'Constructing believable interior perspective with layered bookshelves, warm ambient lighting, and rich focal storytelling.',
+      deliverables: [
+        'Detailed architectural and interior scene',
+        'Custom texture and prop details',
+        'Color grading and lighting composition in Ibis Paint X',
+      ],
+      palette: ['#120f0d', '#291e18', '#f2a65a', '#fa5c5c', '#faeedc'],
+    },
+  },
+  {
+    id: 'self-portrait-art',
+    title: 'Self-Portrait',
+    category: 'art',
+    subtitle: 'Stylized Digital Character Portrait (Ibis Paint X)',
+    description:
+      'Expressive stylized character portrait illustrated in Ibis Paint X. Focuses on facial plane definition, expressive linework, and personal artistic voice.',
+    tags: ['Ibis Paint X', 'Portrait Art', 'Digital Drawing', 'Character Art'],
+    featured: false,
+    metrics: [
+      { label: 'TOOL', value: 'IBIS PAINT X' },
+      { label: 'GENRE', value: 'PORTRAIT' },
+      { label: 'MEDIUM', value: 'DIGITAL DRAWING' },
+    ],
+    image: '/digital-art/selfportrait.png',
     accentColor: 'white',
     details: {
-      role: 'Digital Illustrator & Concept Artist',
-      timeline: 'Art & Concepts',
+      role: 'Artist & Illustrator',
+      timeline: 'Character Art',
       challenges:
-        'Refining line art quality, dynamic poses, and dramatic lighting on mobile/tablet drawing workflows to create impactful concept pieces.',
+        'Capturing character likeness and expressive emotion through confident digital pencil and brush techniques.',
       deliverables: [
-        'Original character concept designs',
-        'Digital game assets and mood illustrations',
-        'Multi-layer digital artwork with custom brushwork',
+        'Full portrait illustration (1080x1445)',
+        'Stylized line art and color blocking',
+        'Digital artwork created in Ibis Paint X',
       ],
-      palette: ['#0c0b12', '#1a1929', '#ff3b69', '#e0d8f0', '#ffffff'],
+      palette: ['#0d0c12', '#1a1924', '#ff3b69', '#d1c7e6', '#ffffff'],
     },
   },
 ];
