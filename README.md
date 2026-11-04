@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sinjini Ghosh — Portfolio
 
-## Getting Started
+[![Live Site](https://img.shields.io/badge/Live_Site-web--portfolio--nu--five.vercel.app-fcee0a?style=for-the-badge&logo=vercel&logoColor=black)](https://web-portfolio-nu-five.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js_15-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-First, run the development server:
+A modern, high-contrast personal portfolio showcasing front-end engineering, behavioral biometrics, algorithmic simulations, game development, and digital graphics.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Live Deployment:** [https://web-portfolio-nu-five.vercel.app](https://web-portfolio-nu-five.vercel.app)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## About Me
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+I am a final-year **Computer Science & Engineering** undergraduate (Class of mid-2027) focused on front-end web development, responsive application architecture, and creative visual design. 
 
-## Learn More
+My work bridges low-level browser fundamentals—crafted from scratch using **vanilla JavaScript, HTML5, and CSS3**—with modern production frameworks including **React.js** and **Next.js 15 (App Router)**. Alongside software engineering, I design visual identities and digital illustrations using **Canva**, **Ibis Paint X**, and **custom CSS**.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Featured Works
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 1. Web & Applications
+* **[TypeLock](https://github.com/Dr-Ghost7/typelock)** — A PIN-pad lock screen that authenticates users based on their typing rhythm. Analyzes key hold duration (dwell time), flight time between taps, touch pressure, contact area, and center accuracy using an explainable classifier and a live real-time oscilloscope.
+* **[Flag Memory](https://github.com/Dr-Ghost7/flag-memory-app)** — An interactive cognitive recall application featuring a 3-tier Leitner Box spaced repetition system (Academy mode), high-stakes Death Mode with progressive difficulty scaling and timer penalties, Inversion mode, and audio-visual feedback.
+* **[A* vs. Q-Learning Simulation](https://github.com/Dr-Ghost7/astar-vs-qlearning-simulation)** — An algorithmic benchmark comparing classical deterministic heuristic search ($A^*$) against a reinforcement learning agent (Q-Learning) across 250 procedurally generated mazes with an 84.8% convergence rate.
 
-## Deploy on Vercel
+### 2. Game Development
+* **[Gangling Bro's Forest](https://missstaticmoth.itch.io/gangling-bros-forest)** — An atmospheric 2D exploration game published on itch.io. Developed using Godot Engine and GDScript, focusing on custom player movement physics and an eerie atmospheric forest environment. Source repository: [Project2alpha](https://github.com/Dr-Ghost7/Project2alpha).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 3. Graphic Design & Digital Art
+* **Canva Graphic Design** — High-contrast typographical poster layouts, key visual presentations, and UI onboarding screens (`Ampliverse`, `Ignatius`, `ZDA Onboarding`).
+* **Ibis Paint X Digital Art** — Master-resolution atmospheric digital paintings, character concepts, and environmental storytelling (`Ghost`, `BookStore`, `Self-Portrait`).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Technical Stack
+
+* **Framework:** Next.js 15 (App Router, Server Components, Route Handlers)
+* **Frontend Library:** React 19
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS & Custom Chamfered Clip-Paths
+* **Audio Engine:** Web Audio API (Synthesized multi-theme SFX)
+* **API Integration:** GitHub REST API (Live repository telemetry with caching and offline fallback)
+* **Deployment & CI/CD:** Vercel
+
+---
+
+## Getting Started Locally
+
+To run this portfolio locally on your machine:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Dr-Ghost7/web-portfolio.git
+   cd web-portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Connect & Contact
+
+* **Live Site:** [https://web-portfolio-nu-five.vercel.app](https://web-portfolio-nu-five.vercel.app)
+* **GitHub:** [@Dr-Ghost7](https://github.com/Dr-Ghost7)
+* **itch.io:** [missstaticmoth.itch.io](https://missstaticmoth.itch.io)
+* **Email:** [sguse001@gmail.com](mailto:sguse001@gmail.com)
