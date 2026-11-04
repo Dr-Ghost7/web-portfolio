@@ -248,3 +248,56 @@ body {
 .eq-bar-2 { animation: eq-bounce-2 0.7s ease-in-out infinite 0.2s; }
 .eq-bar-3 { animation: eq-bounce-3 0.9s ease-in-out infinite 0.1s; }
 .eq-bar-4 { animation: eq-bounce-4 0.65s ease-in-out infinite 0.3s; }
+
+/* Digital Hazard / Police Tape Marquee */
+@keyframes hazard-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-hazard-tape {
+  display: flex;
+  width: max-content;
+  animation: hazard-marquee 24s linear infinite;
+}
+
+.animate-hazard-tape:hover {
+  animation-play-state: paused;
+}
+
+/* Diagonal Hazard Stripes for Tape Edges */
+.bg-hazard-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    #fcee0a,
+    #fcee0a 10px,
+    #060608 10px,
+    #060608 20px
+  );
+}
+
+.bg-hazard-stripes-dark {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(252, 238, 10, 0.45),
+    rgba(252, 238, 10, 0.45) 8px,
+    rgba(6, 6, 8, 0.95) 8px,
+    rgba(6, 6, 8, 0.95) 16px
+  );
+}
+
+/* Chevron / Arrow Ends for Digital Tape */
+.clip-arrow-tape {
+  clip-path: polygon(
+    0% 0%,
+    calc(100% - 16px) 0%,
+    100% 50%,
+    calc(100% - 16px) 100%,
+    0% 100%,
+    16px 50%
+  );
+}

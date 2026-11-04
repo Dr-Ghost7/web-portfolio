@@ -102,26 +102,26 @@ export function TerminalContact() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-[#f5f6fa]">
             GET IN <span className="text-[#ff003c]">TOUCH</span>
           </h2>
-          <p className="text-xs sm:text-sm text-[#8a8f9d] mt-2 max-w-xl">
+          <p className="text-sm sm:text-base text-[#9ca3af] mt-2 max-w-xl">
             Reach out regarding frontend engineering roles, React.js projects, or creative design collaborations.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Left Column: Interactive Terminal */}
-          <div className="lg:col-span-6 flex flex-col bg-[#0b0c10] border border-[#222533] p-4 font-mono clip-cyber-corner">
-            <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#222533] text-xs text-[#8a8f9d]">
+          <div className="lg:col-span-6 flex flex-col bg-[#0b0c10] border border-[#222533] p-5 font-mono clip-cyber-corner">
+            <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#222533] text-sm text-[#8a8f9d]">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#ff003c]" />
                 <span className="w-2.5 h-2.5 rounded-full bg-[#fcee0a]" />
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-                <span className="ml-2 text-white font-bold">TERMINAL // SHELL</span>
+                <span className="ml-2 text-white font-bold text-xs sm:text-sm">TERMINAL // SHELL</span>
               </div>
-              <span className="text-[10px] text-[#fcee0a]">INTERACTIVE</span>
+              <span className="text-xs text-[#fcee0a] font-bold">INTERACTIVE</span>
             </div>
 
             {/* Terminal Log Output */}
-            <div className="flex-1 min-h-[220px] max-h-[300px] overflow-y-auto space-y-1.5 text-xs text-[#d1d5db] mb-3 pr-1">
+            <div className="flex-1 min-h-[220px] max-h-[300px] overflow-y-auto space-y-1.5 text-xs sm:text-sm text-[#d1d5db] mb-3 pr-1 leading-relaxed">
               {terminalOutput.map((log, idx) => (
                 <div
                   key={idx}
@@ -130,7 +130,7 @@ export function TerminalContact() {
                       ? 'text-[#fcee0a] font-bold'
                       : log.startsWith('AVAILABLE')
                       ? 'text-[#ff003c] font-bold'
-                      : 'text-[#8a8f9d]'
+                      : 'text-[#9ca3af]'
                   }`}
                 >
                   {log}
@@ -140,17 +140,17 @@ export function TerminalContact() {
 
             {/* Command Input Form */}
             <form onSubmit={handleCommand} className="flex items-center gap-2 border-t border-[#222533] pt-3">
-              <span className="text-[#fcee0a] text-xs font-bold">&gt;</span>
+              <span className="text-[#fcee0a] text-sm font-bold">&gt;</span>
               <input
                 type="text"
                 value={terminalInput}
                 onChange={(e) => setTerminalInput(e.target.value)}
                 placeholder="type 'help', 'status', 'email', 'projects'..."
-                className="flex-1 bg-transparent text-xs text-[#f5f6fa] focus:outline-none placeholder-[#8a8f9d]/50 font-mono"
+                className="flex-1 bg-transparent text-sm text-[#f5f6fa] focus:outline-none placeholder-[#8a8f9d]/60 font-mono"
               />
               <button
                 type="submit"
-                className="px-2.5 py-1 bg-[#14151f] hover:bg-[#fcee0a] text-white hover:text-black text-[11px] font-bold transition-colors cursor-pointer"
+                className="px-3 py-1.5 bg-[#14151f] hover:bg-[#fcee0a] text-white hover:text-black text-xs font-bold transition-colors cursor-pointer"
               >
                 RUN
               </button>
@@ -160,9 +160,9 @@ export function TerminalContact() {
           {/* Right Column: Direct Contact Form */}
           <div className="lg:col-span-6 flex flex-col justify-between bg-[#0f1016] border border-[#222533] p-6 clip-cyber-card">
             <div>
-              <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4 flex items-center justify-between">
+              <h3 className="text-base font-bold text-white uppercase tracking-wider mb-5 flex flex-wrap items-center justify-between gap-2">
                 <span>SEND DIRECT MESSAGE</span>
-                <span className="text-[#fcee0a] text-xs font-mono">{directEmail}</span>
+                <span className="text-[#fcee0a] text-sm font-mono font-bold">{directEmail}</span>
               </h3>
 
               {submitted ? (
@@ -170,8 +170,8 @@ export function TerminalContact() {
                   <div className="w-10 h-10 mx-auto rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
                     <Check size={20} />
                   </div>
-                  <h4 className="text-sm font-bold text-white">MESSAGE CLIENT OPENED</h4>
-                  <p className="text-xs text-[#8a8f9d]">
+                  <h4 className="text-base font-bold text-white">MESSAGE CLIENT OPENED</h4>
+                  <p className="text-sm text-[#8a8f9d]">
                     Your default mail application has been opened with your message drafted.
                   </p>
                   <button
@@ -185,7 +185,7 @@ export function TerminalContact() {
                 <form onSubmit={handleFormSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-[11px] font-mono text-[#8a8f9d] mb-1">
+                      <label className="block text-xs font-mono font-semibold text-[#a1a6b4] mb-1.5">
                         YOUR NAME
                       </label>
                       <input
@@ -194,11 +194,11 @@ export function TerminalContact() {
                         value={formName}
                         onChange={(e) => setFormName(e.target.value)}
                         placeholder="e.g. Alex Vance"
-                        className="w-full px-3 py-2 bg-[#060608] border border-[#222533] focus:border-[#fcee0a] text-xs text-white placeholder-[#8a8f9d]/40 focus:outline-none"
+                        className="w-full px-3.5 py-2.5 bg-[#060608] border border-[#222533] focus:border-[#fcee0a] text-sm text-white placeholder-[#8a8f9d]/50 focus:outline-none"
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-mono text-[#8a8f9d] mb-1">
+                      <label className="block text-xs font-mono font-semibold text-[#a1a6b4] mb-1.5">
                         YOUR EMAIL
                       </label>
                       <input
@@ -207,13 +207,13 @@ export function TerminalContact() {
                         value={formEmail}
                         onChange={(e) => setFormEmail(e.target.value)}
                         placeholder="e.g. name@company.com"
-                        className="w-full px-3 py-2 bg-[#060608] border border-[#222533] focus:border-[#fcee0a] text-xs text-white placeholder-[#8a8f9d]/40 focus:outline-none"
+                        className="w-full px-3.5 py-2.5 bg-[#060608] border border-[#222533] focus:border-[#fcee0a] text-sm text-white placeholder-[#8a8f9d]/50 focus:outline-none"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono text-[#8a8f9d] mb-1">
+                    <label className="block text-xs font-mono font-semibold text-[#a1a6b4] mb-1.5">
                       MESSAGE
                     </label>
                     <textarea
@@ -222,15 +222,15 @@ export function TerminalContact() {
                       value={formMessage}
                       onChange={(e) => setFormMessage(e.target.value)}
                       placeholder="Discuss role opportunities, project requirements, or questions..."
-                      className="w-full px-3 py-2 bg-[#060608] border border-[#222533] focus:border-[#fcee0a] text-xs text-white placeholder-[#8a8f9d]/40 focus:outline-none resize-none"
+                      className="w-full px-3.5 py-2.5 bg-[#060608] border border-[#222533] focus:border-[#fcee0a] text-sm text-white placeholder-[#8a8f9d]/50 focus:outline-none resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3 bg-[#ff003c] hover:bg-[#ff003c]/90 text-white font-extrabold text-xs uppercase tracking-widest transition-all clip-cyber-button flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_15px_rgba(255,0,60,0.4)]"
+                    className="w-full py-3.5 bg-[#ff003c] hover:bg-[#ff003c]/90 text-white font-extrabold text-sm uppercase tracking-widest transition-all clip-cyber-button flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_15px_rgba(255,0,60,0.4)]"
                   >
-                    <Send size={14} />
+                    <Send size={15} />
                     <span>SEND MESSAGE</span>
                   </button>
                 </form>
@@ -238,26 +238,26 @@ export function TerminalContact() {
             </div>
 
             {/* Quick Contact Metadata */}
-            <div className="mt-6 pt-4 border-t border-[#222533] flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div className="mt-6 pt-4 border-t border-[#222533] flex flex-wrap items-center justify-between gap-3 text-sm">
               <button
                 onClick={handleCopyEmail}
-                className="flex items-center gap-2 text-[#8a8f9d] hover:text-[#fcee0a] transition-colors cursor-pointer"
+                className="flex items-center gap-2 text-[#d1d5db] hover:text-[#fcee0a] font-mono transition-colors cursor-pointer"
                 title="Copy Email Address"
               >
-                <Mail size={13} />
-                <span>{directEmail}</span>
-                {copied ? <Check size={13} className="text-emerald-400" /> : <Copy size={13} />}
+                <Mail size={15} />
+                <span className="font-semibold">{directEmail}</span>
+                {copied ? <Check size={15} className="text-emerald-400" /> : <Copy size={15} />}
               </button>
 
               <a
                 href="https://github.com/Dr-Ghost7"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-[#8a8f9d] hover:text-white transition-colors"
+                className="flex items-center gap-1.5 text-[#d1d5db] hover:text-white font-mono font-semibold transition-colors"
               >
-                <GithubIcon size={13} />
+                <GithubIcon size={15} />
                 <span>Dr-Ghost7</span>
-                <ExternalLink size={11} />
+                <ExternalLink size={13} />
               </a>
             </div>
           </div>

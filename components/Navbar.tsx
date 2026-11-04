@@ -20,27 +20,27 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-[#222533] bg-[#060608]/85 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between text-xs tracking-wider">
+    <header className="sticky top-0 z-40 w-full border-b border-[#222533] bg-[#060608]/90 backdrop-blur-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between tracking-wider">
         {/* Left: Minimal, Clean Logo */}
         <a
           href="#"
           onClick={() => cyberAudio.playClick()}
           className="flex items-center gap-3 group cursor-pointer"
         >
-          <div className="w-8 h-8 bg-[#13141c] border border-[#fcee0a] flex items-center justify-center font-bold text-[#fcee0a] group-hover:bg-[#fcee0a] group-hover:text-black transition-all">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 bg-[#13141c] border border-[#fcee0a] flex items-center justify-center font-extrabold text-sm sm:text-base text-[#fcee0a] group-hover:bg-[#fcee0a] group-hover:text-black transition-all">
             SG
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-bold text-sm tracking-wider text-[#f5f6fa] group-hover:text-[#fcee0a] transition-colors">
+            <span className="font-extrabold text-sm sm:text-base tracking-wider text-[#f5f6fa] group-hover:text-[#fcee0a] transition-colors font-mono">
               SINJINI GHOSH
             </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#fcee0a] animate-pulse hidden sm:inline-block" />
+            <span className="w-2 h-2 rounded-full bg-[#fcee0a] animate-pulse hidden sm:inline-block" />
           </div>
         </a>
 
         {/* Center: Clean Spaced Navigation Links */}
-        <nav className="hidden md:flex items-center space-x-8 text-[#8a8f9d] font-mono text-[11px]">
+        <nav className="hidden md:flex items-center space-x-8 text-[#9ca3af] font-mono text-xs sm:text-[13px] font-semibold">
           <a
             href="#projects"
             onMouseEnter={() => cyberAudio.playHover()}
@@ -81,16 +81,16 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
           <button
             onClick={toggleSound}
             title={audioEnabled ? 'Mute Audio' : 'Enable Audio'}
-            className={`flex items-center gap-2 px-2.5 py-1.5 border transition-all cursor-pointer ${
+            className={`flex items-center gap-2 px-3 py-1.5 border transition-all cursor-pointer ${
               audioEnabled
                 ? 'border-[#fcee0a]/60 text-[#fcee0a] bg-[#fcee0a]/10 hover:bg-[#fcee0a]/20'
                 : 'border-[#222533] text-[#8a8f9d] hover:text-[#f5f6fa]'
             }`}
           >
-            {audioEnabled ? <Volume2 size={14} /> : <VolumeX size={14} />}
+            {audioEnabled ? <Volume2 size={15} /> : <VolumeX size={15} />}
             {/* Live animated waveform bars when sound is active */}
             {audioEnabled && (
-              <span className="flex items-end gap-0.5 h-3">
+              <span className="flex items-end gap-0.5 h-3.5">
                 <span className="w-0.5 bg-[#fcee0a] eq-bar-1" />
                 <span className="w-0.5 bg-[#ff003c] eq-bar-2" />
                 <span className="w-0.5 bg-[#fcee0a] eq-bar-3" />
@@ -104,11 +104,11 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => cyberAudio.playClick()}
-            className="flex items-center gap-2 px-3 py-1.5 bg-[#13141c] hover:bg-[#fcee0a] text-[#f5f6fa] hover:text-black border border-[#222533] hover:border-[#fcee0a] transition-all font-bold font-mono text-[11px] clip-cyber-button"
+            className="flex items-center gap-2 px-3.5 py-1.5 bg-[#13141c] hover:bg-[#fcee0a] text-[#f5f6fa] hover:text-black border border-[#222533] hover:border-[#fcee0a] transition-all font-bold font-mono text-xs clip-cyber-button"
           >
-            <GithubIcon size={13} />
+            <GithubIcon size={14} />
             <span className="hidden sm:inline">GitHub</span>
-            <ExternalLink size={11} className="opacity-70" />
+            <ExternalLink size={12} className="opacity-70" />
           </a>
         </div>
       </div>
