@@ -249,20 +249,20 @@ body {
 .eq-bar-3 { animation: eq-bounce-3 0.9s ease-in-out infinite 0.1s; }
 .eq-bar-4 { animation: eq-bounce-4 0.65s ease-in-out infinite 0.3s; }
 
-/* Digital Hazard / Police Tape Marquee */
+/* Digital Hazard / Police Tape Marquee (Moves Right to Match ►►► Direction) */
 @keyframes hazard-marquee {
   0% {
-    transform: translateX(0%);
+    transform: translateX(-50%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(0%);
   }
 }
 
 .animate-hazard-tape {
   display: flex;
   width: max-content;
-  animation: hazard-marquee 24s linear infinite;
+  animation: hazard-marquee 26s linear infinite;
 }
 
 .animate-hazard-tape:hover {
