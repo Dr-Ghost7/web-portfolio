@@ -17,6 +17,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://web-portfolio-nu-five.vercel.app'),
   title: 'Sinjini Ghosh | Portfolio',
   description:
     'Portfolio of Sinjini Ghosh (Dr-Ghost7). Final year B.Tech CSE student specializing in Frontend Development with React.js, Next.js, JavaScript, and Graphic Design.',

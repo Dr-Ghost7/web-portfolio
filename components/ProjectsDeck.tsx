@@ -70,6 +70,9 @@ export function ProjectsDeck() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f1016] via-transparent to-transparent opacity-75 pointer-events-none" />
 
+        {/* Laser Scanner sweep line */}
+        <div className="laser-scanner opacity-0 group-hover:opacity-100 transition-opacity" />
+
         {/* Top Badges */}
         <div className="absolute top-3 left-3 flex items-center gap-1.5">
           <span

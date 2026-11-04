@@ -28,7 +28,7 @@ My work bridges low-level browser fundamentals—crafted from scratch using **va
 * **[A* vs. Q-Learning Simulation](https://github.com/Dr-Ghost7/astar-vs-qlearning-simulation)** — An algorithmic benchmark comparing classical deterministic heuristic search ($A^*$) against a reinforcement learning agent (Q-Learning) across 250 procedurally generated mazes with an 84.8% convergence rate.
 
 ### 2. Game Development
-* **[Gangling Bro's Forest](https://missstaticmoth.itch.io/gangling-bros-forest)** — An atmospheric 2D exploration game published on itch.io. Developed using Godot Engine and GDScript, focusing on custom player movement physics and an eerie atmospheric forest environment. Source repository: [Project2alpha](https://github.com/Dr-Ghost7/Project2alpha).
+* **[Gangling Bro's Forest](https://missstaticmoth.itch.io/gangling-bros-forest)** — A 3D story-based psychological horror game published on itch.io. Developed using Godot Engine and GDScript, you play as a park ranger following objectives and fleeing an unknown creature, with a psychological twist questioning your sanity. Source repository: [Project2alpha](https://github.com/Dr-Ghost7/Project2alpha).
 
 ### 3. Graphic Design & Digital Art
 * **Canva Graphic Design** — High-contrast typographical poster layouts, key visual presentations, and UI onboarding screens (`Ampliverse`, `Ignatius`, `ZDA Onboarding`).
