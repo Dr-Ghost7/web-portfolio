@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { TECHNICAL_PROJECTS, CREATIVE_PROJECTS, ProjectItem } from '@/lib/projects-data';
 import { GraphicDesignModal } from '@/components/GraphicDesignModal';
+import { CyberDivider } from '@/components/CyberDivider';
 import { cyberAudio } from '@/lib/sounds';
 import { ExternalLink, Eye, Gamepad2, Palette, Code2, Sparkles, Layers } from 'lucide-react';
 import { GithubIcon } from '@/components/icons/GithubIcon';
@@ -223,17 +224,10 @@ export function ProjectsDeck() {
         </div>
 
         {/* ======================================================== */}
-        {/* SECTION DIVIDER WITH SUBSTANTIAL GAP                     */}
+        {/* SECTION DIVIDER: CYBER CIRCUIT LINE (NO TEXT)             */}
         {/* ======================================================== */}
-        <div className="relative my-12 flex items-center justify-center">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-[#222533]" />
-          </div>
-          <div className="relative px-4 bg-[#08080a] flex items-center gap-3 text-xs font-mono text-[#8a8f9d]">
-            <span className="w-1.5 h-1.5 bg-[#ff003c]" />
-            <span className="tracking-widest uppercase">CREATIVE DOMAIN SEPARATION</span>
-            <span className="w-1.5 h-1.5 bg-[#fcee0a]" />
-          </div>
+        <div className="my-14">
+          <CyberDivider />
         </div>
 
         {/* ======================================================== */}

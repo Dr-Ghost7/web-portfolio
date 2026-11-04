@@ -175,6 +175,28 @@ body {
   animation-play-state: paused;
 }
 
+/* Designed Cyber Divider Light Pulse */
+@keyframes divider-travel {
+  0% {
+    transform: translateX(-280%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(280%);
+    opacity: 0;
+  }
+}
+
+.cyber-divider-pulse {
+  animation: divider-travel 4s ease-in-out infinite;
+}
+
 /* Moving Cyber Scanner Line */
 @keyframes laser-sweep {
   0% {

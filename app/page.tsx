@@ -1,7 +1,8 @@
 import { getGitHubData, GITHUB_USERNAME } from '@/lib/github';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
-import { HudTicker } from '@/components/HudTicker';
+import { CyberParticles } from '@/components/CyberParticles';
+import { CyberDivider } from '@/components/CyberDivider';
 import { ProjectsDeck } from '@/components/ProjectsDeck';
 import { GitHubStatsDeck } from '@/components/GitHubStatsDeck';
 import { SkillMatrix } from '@/components/SkillMatrix';
@@ -13,17 +14,20 @@ export default async function HomePage() {
   const { profile, repos } = await getGitHubData();
 
   return (
-    <main className="min-h-screen flex flex-col bg-[#060608] selection:bg-[#fcee0a] selection:text-black">
-      {/* Top Navigation Bar with Audio Synthesizer */}
+    <main className="min-h-screen flex flex-col bg-[#060608] selection:bg-[#fcee0a] selection:text-black relative">
+      {/* Full-viewport ambient cyber particles (lightweight, runs across the entire page) */}
+      <CyberParticles />
+
+      {/* Decluttered Top Navigation Bar */}
       <Navbar githubLogin={GITHUB_USERNAME} />
 
-      {/* Hero Section with Interactive Particle Canvas & Live Equalizer */}
+      {/* Clutter-Free Hero Section */}
       <Hero />
 
-      {/* Moving Telemetry Marquee Ticker */}
-      <HudTicker />
+      {/* Yellow Cyberpunk Designed Accent Line (No Text) */}
+      <CyberDivider />
 
-      {/* Separated Technical Works and Creative Works Showcases */}
+      {/* Projects Showcase (Technical Works & Creative Works) */}
       <ProjectsDeck />
 
       {/* Real-time GitHub Repositories Deck */}
