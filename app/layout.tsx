@@ -20,6 +20,29 @@ export const metadata: Metadata = {
   title: 'Sinjini Ghosh | Portfolio',
   description:
     'Portfolio of Sinjini Ghosh (Dr-Ghost7). Final year B.Tech CSE student specializing in Frontend Development with React.js, Next.js, JavaScript, and Graphic Design.',
+  openGraph: {
+    title: 'Sinjini Ghosh | Frontend Developer & Visual Designer',
+    description:
+      'Final year B.Tech CSE student building responsive web applications with React.js & Next.js, published Godot game, and digital graphics.',
+    siteName: 'Sinjini Ghosh Portfolio',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Sinjini Ghosh Portfolio Social Preview',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sinjini Ghosh | Portfolio',
+    description:
+      'Frontend Development with React.js, Next.js, JavaScript, and Graphic Design.',
+    images: ['/og-image.svg'],
+  },
   keywords: [
     'Frontend Developer',
     'React.js',

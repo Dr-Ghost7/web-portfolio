@@ -323,7 +323,7 @@ export const SKILLS_MATRIX = [
       { name: 'React.js', level: 'ACTIVE', desc: 'Component architecture, Hooks (useState, useEffect, useMemo), state flow' },
       { name: 'Next.js 15', level: 'MODERN', desc: 'App Router, Server Components, SSR, Image optimization, Edge routes' },
       { name: 'HTML5 & CSS3', level: 'MASTER', desc: 'Semantic layout, CSS Grid, Flexbox, Keyframe animations, Responsive design' },
-      { name: 'Tailwind CSS', level: 'ADVANCED', desc: 'Rapid utility styling, custom theming, dark cyberpunk aesthetics' },
+      { name: 'Tailwind CSS', level: 'ADVANCED', desc: 'Rapid utility styling, custom dark themes, high-contrast layouts' },
       { name: 'TypeScript', level: 'PROFICIENT', desc: 'Type safety, interfaces, props definition, robust codebase design' },
     ],
   },

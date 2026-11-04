@@ -114,7 +114,7 @@ const FALLBACK_REPOS: GitHubRepo[] = [
 export async function getGitHubData(): Promise<{ profile: GitHubProfile; repos: GitHubRepo[] }> {
   try {
     const headers: HeadersInit = {
-      'User-Agent': 'Nextjs-Cyber-Portfolio',
+      'User-Agent': 'Nextjs-Portfolio',
       Accept: 'application/vnd.github.v3+json',
     };
 

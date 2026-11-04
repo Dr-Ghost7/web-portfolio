@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Volume2, VolumeX, ExternalLink } from 'lucide-react';
+import { Volume2, VolumeX, ExternalLink, SlidersHorizontal } from 'lucide-react';
 import { GithubIcon } from '@/components/icons/GithubIcon';
-import { cyberAudio } from '@/lib/sounds';
+import { cyberAudio, SoundTheme } from '@/lib/sounds';
 
 interface NavbarProps {
   githubLogin?: string;
@@ -12,6 +12,7 @@ interface NavbarProps {
 export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
   const [time, setTime] = useState<string>('');
   const [audioEnabled, setAudioEnabled] = useState<boolean>(true);
+  const [currentTheme, setCurrentTheme] = useState<SoundTheme>('holo');
 
   useEffect(() => {
     const updateTime = () => {
@@ -34,13 +35,32 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
     const next = !audioEnabled;
     setAudioEnabled(next);
     cyberAudio.enabled = next;
-    if (next) cyberAudio.playModeSwitch();
+    if (next) cyberAudio.playClick();
+  };
+
+  const cycleSoundTheme = () => {
+    const themes: SoundTheme[] = ['holo', 'laser', 'mechanical'];
+    const nextIdx = (themes.indexOf(currentTheme) + 1) % themes.length;
+    const nextTheme = themes[nextIdx];
+    setCurrentTheme(nextTheme);
+    cyberAudio.setTheme(nextTheme);
+  };
+
+  const getThemeLabel = (theme: SoundTheme) => {
+    switch (theme) {
+      case 'holo':
+        return 'HOLO-CHIME';
+      case 'laser':
+        return 'LASER-PULSE';
+      case 'mechanical':
+        return 'MECH-RELAY';
+    }
   };
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-[#222533] bg-[#060608]/90 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between text-xs tracking-wider">
-        {/* Left: System Status & Logo */}
+        {/* Left: Branding & Status */}
         <div className="flex items-center space-x-4">
           <a
             href="#"
@@ -102,16 +122,24 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
           </a>
         </nav>
 
-        {/* Right: Audio toggle, Clock, GitHub */}
-        <div className="flex items-center space-x-3">
-          <div className="hidden sm:flex items-center px-2 py-1 bg-[#0d0e13] border border-[#222533] text-[#8a8f9d] text-[11px]">
-            <span className="text-[#fcee0a] mr-1.5">TIME</span>
-            <span>{time || '--:--:--'}</span>
-          </div>
+        {/* Right: Audio Theme Selector, Audio Toggle, Clock, GitHub */}
+        <div className="flex items-center space-x-2 sm:space-x-3">
+          {/* Sound Theme Selector */}
+          {audioEnabled && (
+            <button
+              onClick={cycleSoundTheme}
+              title="Click to cycle SFX Profiles (Holo-Chime / Laser / Mechanical)"
+              className="hidden sm:flex items-center gap-1.5 px-2 py-1 bg-[#13141c] hover:bg-[#222533] border border-[#222533] text-[10px] font-mono text-[#fcee0a] cursor-pointer transition-colors"
+            >
+              <SlidersHorizontal size={11} className="text-[#8a8f9d]" />
+              <span>SFX: {getThemeLabel(currentTheme)}</span>
+            </button>
+          )}
 
+          {/* Master Sound Toggle */}
           <button
             onClick={toggleSound}
-            title={audioEnabled ? 'Mute Audio Effects' : 'Enable Audio Effects'}
+            title={audioEnabled ? 'Mute Audio' : 'Enable Audio'}
             className={`p-2 border transition-all cursor-pointer ${
               audioEnabled
                 ? 'border-[#fcee0a]/60 text-[#fcee0a] bg-[#fcee0a]/10 hover:bg-[#fcee0a]/20'
@@ -121,6 +149,13 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
             {audioEnabled ? <Volume2 size={15} /> : <VolumeX size={15} />}
           </button>
 
+          {/* Clock */}
+          <div className="hidden xl:flex items-center px-2 py-1 bg-[#0d0e13] border border-[#222533] text-[#8a8f9d] text-[11px]">
+            <span className="text-[#fcee0a] mr-1.5">TIME</span>
+            <span>{time || '--:--:--'}</span>
+          </div>
+
+          {/* GitHub Button */}
           <a
             href={`https://github.com/${githubLogin}`}
             target="_blank"
