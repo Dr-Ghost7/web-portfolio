@@ -19,12 +19,18 @@ export function Hero({ onExploreProjects, onExploreDesign }: HeroProps) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 text-center sm:text-left">
         {/* Status Pills */}
         <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 mb-6 text-xs font-mono">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#13141c]/90 border border-[#fcee0a]/40 text-[#fcee0a]">
+          <div
+            onMouseEnter={() => cyberAudio.playHover()}
+            className="inline-flex items-center gap-2 px-3 py-1 bg-[#13141c]/90 border border-[#fcee0a]/40 text-[#fcee0a] cursor-default transition-colors hover:border-[#fcee0a]"
+          >
             <span className="w-1.5 h-1.5 rounded-full bg-[#fcee0a] animate-ping" />
             <span>B.Tech CSE &apos;27 // Final Year</span>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#13141c]/90 border border-[#222533] text-[#d1d5db]">
+          <div
+            onMouseEnter={() => cyberAudio.playHover()}
+            className="inline-flex items-center gap-2 px-3 py-1 bg-[#13141c]/90 border border-[#222533] text-[#d1d5db] cursor-default transition-colors hover:border-emerald-400"
+          >
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
             <span>Available for Frontend Roles</span>
           </div>
@@ -33,6 +39,7 @@ export function Hero({ onExploreProjects, onExploreDesign }: HeroProps) {
             href="https://missstaticmoth.itch.io/gangling-bros-forest"
             target="_blank"
             rel="noopener noreferrer"
+            onMouseEnter={() => cyberAudio.playHover()}
             onClick={() => cyberAudio.playClick()}
             className="hidden md:inline-flex items-center gap-1.5 px-3 py-1 bg-[#13141c]/90 border border-[#ff003c]/40 text-[#ff003c] hover:bg-[#ff003c]/10 transition-colors"
           >
@@ -42,7 +49,11 @@ export function Hero({ onExploreProjects, onExploreDesign }: HeroProps) {
         </div>
 
         {/* Main Name with Interactive Glitch Effect */}
-        <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter uppercase leading-none mb-4 glitch-hover cursor-default select-none">
+        <h1
+          onMouseEnter={() => cyberAudio.playHover()}
+          onClick={() => cyberAudio.playLaser()}
+          className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter uppercase leading-none mb-4 glitch-hover cursor-pointer select-none"
+        >
           <span className="text-[#f5f6fa]">Sinjini</span>{' '}
           <span className="text-[#fcee0a] text-glow-yellow">
             Ghosh<span className="text-[#ff003c]">.</span>
@@ -51,7 +62,10 @@ export function Hero({ onExploreProjects, onExploreDesign }: HeroProps) {
 
         {/* Subtitle */}
         <div className="flex items-center justify-center sm:justify-start gap-3 mb-6">
-          <span className="px-2 py-0.5 bg-[#ff003c] text-white font-bold text-xs clip-tag-slant font-mono">
+          <span
+            onMouseEnter={() => cyberAudio.playHover()}
+            className="px-2 py-0.5 bg-[#ff003c] text-white font-bold text-xs clip-tag-slant font-mono cursor-default"
+          >
             DR-GHOST7
           </span>
           <span className="text-base sm:text-xl text-[#8a8f9d] font-mono tracking-wide">
@@ -73,11 +87,12 @@ export function Hero({ onExploreProjects, onExploreDesign }: HeroProps) {
         <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3">
           <a
             href="#projects"
+            onMouseEnter={() => cyberAudio.playHover()}
             onClick={() => {
               cyberAudio.playClick();
               onExploreProjects?.();
             }}
-            className="px-6 py-3 bg-[#fcee0a] text-black font-extrabold text-xs sm:text-sm tracking-widest uppercase hover:bg-white transition-all clip-cyber-button flex items-center gap-2 cursor-pointer"
+            className="px-6 py-3 bg-[#fcee0a] text-black font-extrabold text-xs sm:text-sm tracking-widest uppercase hover:bg-white transition-all clip-cyber-button flex items-center gap-2 cursor-pointer shadow-[0_0_15px_rgba(252,238,10,0.35)]"
           >
             <span>EXPLORE WORK</span>
             <ArrowRight size={15} />
@@ -85,6 +100,7 @@ export function Hero({ onExploreProjects, onExploreDesign }: HeroProps) {
 
           <a
             href="#projects"
+            onMouseEnter={() => cyberAudio.playHover()}
             onClick={() => {
               cyberAudio.playClick();
               onExploreDesign?.();
@@ -97,6 +113,7 @@ export function Hero({ onExploreProjects, onExploreDesign }: HeroProps) {
 
           <a
             href="#contact"
+            onMouseEnter={() => cyberAudio.playHover()}
             onClick={() => cyberAudio.playClick()}
             className="px-5 py-3 bg-transparent text-[#8a8f9d] hover:text-[#fcee0a] border border-[#222533] hover:border-[#fcee0a] font-medium text-xs sm:text-sm tracking-wider uppercase transition-all flex items-center gap-2 cursor-pointer"
           >

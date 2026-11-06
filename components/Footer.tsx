@@ -38,6 +38,8 @@ export function Footer() {
             href="https://github.com/Dr-Ghost7"
             target="_blank"
             rel="noopener noreferrer"
+            onMouseEnter={() => cyberAudio.playHover()}
+            onClick={() => cyberAudio.playClick()}
             className="hover:text-white transition-colors"
           >
             github.com/Dr-Ghost7
@@ -45,6 +47,8 @@ export function Footer() {
           <span>•</span>
           <a
             href="mailto:sguse001@gmail.com"
+            onMouseEnter={() => cyberAudio.playHover()}
+            onClick={() => cyberAudio.playClick()}
             className="text-[#fcee0a] font-bold hover:underline"
           >
             sguse001@gmail.com
@@ -55,6 +59,7 @@ export function Footer() {
         <div className="flex items-center gap-3">
           <button
             onClick={scrollToTop}
+            onMouseEnter={() => cyberAudio.playHover()}
             className="px-4 py-2 bg-[#13141c] hover:bg-[#fcee0a] text-white hover:text-black border border-[#222533] hover:border-[#fcee0a] transition-all flex items-center gap-2 font-bold cursor-pointer clip-cyber-button text-xs sm:text-sm"
             title="Return to top"
           >

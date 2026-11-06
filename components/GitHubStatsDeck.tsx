@@ -61,16 +61,23 @@ export function GitHubStatsDeck({ initialProfile, initialRepos }: GitHubStatsDec
           </div>
 
           {/* GitHub Profile Card */}
-          <div className="flex items-center gap-4 p-3 bg-[#13141c] border border-[#222533] clip-cyber-corner">
+          <a
+            href={profile.html_url || `https://github.com/${GITHUB_USERNAME}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onMouseEnter={() => cyberAudio.playHover()}
+            onClick={() => cyberAudio.playClick()}
+            className="flex items-center gap-4 p-3 bg-[#13141c] hover:bg-[#1a1c26] border border-[#222533] hover:border-[#fcee0a] clip-cyber-corner transition-all cursor-pointer group"
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={profile.avatar_url}
               alt={profile.login}
-              className="w-12 h-12 border border-[#fcee0a] object-cover"
+              className="w-12 h-12 border border-[#fcee0a] object-cover group-hover:scale-105 transition-transform"
             />
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-white">{profile.name || profile.login}</span>
+                <span className="text-xs font-bold text-white group-hover:text-[#fcee0a] transition-colors">{profile.name || profile.login}</span>
                 <span className="text-[10px] px-1.5 py-0.2 bg-[#fcee0a] text-black font-bold font-mono">
                   ACTIVE
                 </span>
@@ -81,7 +88,7 @@ export function GitHubStatsDeck({ initialProfile, initialRepos }: GitHubStatsDec
                 <span>FOLLOWERS: <strong className="text-white">{profile.followers}</strong></span>
               </div>
             </div>
-          </div>
+          </a>
         </div>
 
         {/* Filter & Search Bar */}
@@ -92,7 +99,10 @@ export function GitHubStatsDeck({ initialProfile, initialRepos }: GitHubStatsDec
               type="text"
               placeholder="Search repositories (e.g. typelock, flag, simulation)..."
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                cyberAudio.playTyping();
+              }}
               className="w-full pl-9 pr-4 py-2.5 bg-[#0f1016] border border-[#222533] text-xs text-[#f5f6fa] placeholder-[#8a8f9d]/50 focus:border-[#fcee0a] focus:outline-none font-mono"
             />
           </div>
@@ -102,6 +112,7 @@ export function GitHubStatsDeck({ initialProfile, initialRepos }: GitHubStatsDec
             {languages.map((lang) => (
               <button
                 key={lang}
+                onMouseEnter={() => cyberAudio.playHover()}
                 onClick={() => {
                   cyberAudio.playClick();
                   setSelectedLanguage(lang);
@@ -160,6 +171,7 @@ export function GitHubStatsDeck({ initialProfile, initialRepos }: GitHubStatsDec
                   href={repo.html_url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onMouseEnter={() => cyberAudio.playHover()}
                   onClick={() => cyberAudio.playClick()}
                   className="px-2.5 py-1 bg-[#14151f] group-hover:bg-[#fcee0a] text-white group-hover:text-black border border-[#222533] group-hover:border-[#fcee0a] text-[11px] font-bold flex items-center gap-1 transition-all"
                 >

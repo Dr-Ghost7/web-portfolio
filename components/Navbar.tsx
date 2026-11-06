@@ -25,6 +25,7 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
         {/* Left: Minimal, Clean Logo */}
         <a
           href="#"
+          onMouseEnter={() => cyberAudio.playHover()}
           onClick={() => cyberAudio.playClick()}
           className="flex items-center gap-3 group cursor-pointer"
         >
@@ -80,6 +81,7 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
           {/* Sound Toggle with Mini Animated Audio Wave */}
           <button
             onClick={toggleSound}
+            onMouseEnter={() => cyberAudio.playHover()}
             title={audioEnabled ? 'Mute Audio' : 'Enable Audio'}
             className={`flex items-center gap-2 px-3 py-1.5 border transition-all cursor-pointer ${
               audioEnabled
@@ -103,6 +105,7 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
             href={`https://github.com/${githubLogin}`}
             target="_blank"
             rel="noopener noreferrer"
+            onMouseEnter={() => cyberAudio.playHover()}
             onClick={() => cyberAudio.playClick()}
             className="flex items-center gap-2 px-3.5 py-1.5 bg-[#13141c] hover:bg-[#fcee0a] text-[#f5f6fa] hover:text-black border border-[#222533] hover:border-[#fcee0a] transition-all font-bold font-mono text-xs clip-cyber-button"
           >

@@ -48,7 +48,8 @@ export function DigitalHazardTape({ className = '' }: DigitalHazardTapeProps) {
   return (
     <div
       onMouseEnter={() => cyberAudio.playHover()}
-      className={`relative w-full overflow-hidden select-none py-2 my-2 ${className}`}
+      onClick={() => cyberAudio.playLaser()}
+      className={`relative w-full overflow-hidden select-none py-2 my-2 cursor-pointer ${className}`}
     >
       {/* Outer ambient yellow glow */}
       <div className="absolute inset-0 bg-[#fcee0a]/15 blur-md pointer-events-none" />

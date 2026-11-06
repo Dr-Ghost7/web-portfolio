@@ -75,7 +75,7 @@ export function TerminalContact() {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    cyberAudio.playModeSwitch();
+    cyberAudio.playSuccess();
     const mailto = `mailto:${directEmail}?subject=${encodeURIComponent(
       `Portfolio Message from ${formName}`
     )}&body=${encodeURIComponent(`From: ${formName} (${formEmail})\n\n${formMessage}`)}`;
@@ -144,12 +144,17 @@ export function TerminalContact() {
               <input
                 type="text"
                 value={terminalInput}
-                onChange={(e) => setTerminalInput(e.target.value)}
+                onChange={(e) => {
+                  setTerminalInput(e.target.value);
+                  cyberAudio.playTyping();
+                }}
                 placeholder="type 'help', 'status', 'email', 'projects'..."
                 className="flex-1 bg-transparent text-sm text-[#f5f6fa] focus:outline-none placeholder-[#8a8f9d]/60 font-mono"
               />
               <button
                 type="submit"
+                onMouseEnter={() => cyberAudio.playHover()}
+                onClick={() => cyberAudio.playLaser()}
                 className="px-3 py-1.5 bg-[#14151f] hover:bg-[#fcee0a] text-white hover:text-black text-xs font-bold transition-colors cursor-pointer"
               >
                 RUN
@@ -192,7 +197,10 @@ export function TerminalContact() {
                         type="text"
                         required
                         value={formName}
-                        onChange={(e) => setFormName(e.target.value)}
+                        onChange={(e) => {
+                          setFormName(e.target.value);
+                          cyberAudio.playTyping();
+                        }}
                         placeholder="e.g. Alex Vance"
                         className="w-full px-3.5 py-2.5 bg-[#060608] border border-[#222533] focus:border-[#fcee0a] text-sm text-white placeholder-[#8a8f9d]/50 focus:outline-none"
                       />
@@ -205,7 +213,10 @@ export function TerminalContact() {
                         type="email"
                         required
                         value={formEmail}
-                        onChange={(e) => setFormEmail(e.target.value)}
+                        onChange={(e) => {
+                          setFormEmail(e.target.value);
+                          cyberAudio.playTyping();
+                        }}
                         placeholder="e.g. name@company.com"
                         className="w-full px-3.5 py-2.5 bg-[#060608] border border-[#222533] focus:border-[#fcee0a] text-sm text-white placeholder-[#8a8f9d]/50 focus:outline-none"
                       />
@@ -220,7 +231,10 @@ export function TerminalContact() {
                       required
                       rows={4}
                       value={formMessage}
-                      onChange={(e) => setFormMessage(e.target.value)}
+                      onChange={(e) => {
+                        setFormMessage(e.target.value);
+                        cyberAudio.playTyping();
+                      }}
                       placeholder="Discuss role opportunities, project requirements, or questions..."
                       className="w-full px-3.5 py-2.5 bg-[#060608] border border-[#222533] focus:border-[#fcee0a] text-sm text-white placeholder-[#8a8f9d]/50 focus:outline-none resize-none"
                     />
@@ -228,6 +242,7 @@ export function TerminalContact() {
 
                   <button
                     type="submit"
+                    onMouseEnter={() => cyberAudio.playHover()}
                     className="w-full py-3.5 bg-[#ff003c] hover:bg-[#ff003c]/90 text-white font-extrabold text-sm uppercase tracking-widest transition-all clip-cyber-button flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_15px_rgba(255,0,60,0.4)]"
                   >
                     <Send size={15} />
@@ -241,6 +256,7 @@ export function TerminalContact() {
             <div className="mt-6 pt-4 border-t border-[#222533] flex flex-wrap items-center justify-between gap-3 text-sm">
               <button
                 onClick={handleCopyEmail}
+                onMouseEnter={() => cyberAudio.playHover()}
                 className="flex items-center gap-2 text-[#d1d5db] hover:text-[#fcee0a] font-mono transition-colors cursor-pointer"
                 title="Copy Email Address"
               >
@@ -253,6 +269,8 @@ export function TerminalContact() {
                 href="https://github.com/Dr-Ghost7"
                 target="_blank"
                 rel="noopener noreferrer"
+                onMouseEnter={() => cyberAudio.playHover()}
+                onClick={() => cyberAudio.playClick()}
                 className="flex items-center gap-1.5 text-[#d1d5db] hover:text-white font-mono font-semibold transition-colors"
               >
                 <GithubIcon size={15} />

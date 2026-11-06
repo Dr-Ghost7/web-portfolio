@@ -20,6 +20,7 @@ export function GraphicDesignModal({ project, onClose }: GraphicDesignModalProps
       }
     };
     if (project) {
+      cyberAudio.playModeSwitch();
       window.addEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'hidden';
     }
@@ -56,6 +57,8 @@ export function GraphicDesignModal({ project, onClose }: GraphicDesignModalProps
               href={project.image}
               target="_blank"
               rel="noopener noreferrer"
+              onMouseEnter={() => cyberAudio.playHover()}
+              onClick={() => cyberAudio.playClick()}
               className="p-1.5 text-[#8a8f9d] hover:text-[#fcee0a] border border-[#222533] hover:border-[#fcee0a] transition-all flex items-center gap-1 text-[11px] font-mono"
               title="Open full resolution file"
             >
@@ -64,6 +67,7 @@ export function GraphicDesignModal({ project, onClose }: GraphicDesignModalProps
             </a>
 
             <button
+              onMouseEnter={() => cyberAudio.playHover()}
               onClick={() => {
                 cyberAudio.playClick();
                 onClose();
@@ -106,6 +110,8 @@ export function GraphicDesignModal({ project, onClose }: GraphicDesignModalProps
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onMouseEnter={() => cyberAudio.playHover()}
+                  onClick={() => cyberAudio.playClick()}
                   className="px-3 py-1.5 bg-[#14151f] hover:bg-[#fcee0a] text-white hover:text-black border border-[#222533] hover:border-[#fcee0a] text-xs font-bold flex items-center gap-1.5 transition-colors font-mono"
                 >
                   <GithubIcon size={13} />
@@ -117,6 +123,8 @@ export function GraphicDesignModal({ project, onClose }: GraphicDesignModalProps
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onMouseEnter={() => cyberAudio.playHover()}
+                  onClick={() => cyberAudio.playClick()}
                   className="px-3 py-1.5 bg-[#ff003c] hover:bg-white text-white hover:text-black text-xs font-bold flex items-center gap-1.5 transition-colors font-mono"
                 >
                   <Gamepad2 size={13} />
@@ -188,6 +196,7 @@ export function GraphicDesignModal({ project, onClose }: GraphicDesignModalProps
             {project.details?.timeline || 'Portfolio'}
           </div>
           <button
+            onMouseEnter={() => cyberAudio.playHover()}
             onClick={() => {
               cyberAudio.playClick();
               onClose();

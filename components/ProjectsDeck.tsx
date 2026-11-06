@@ -98,6 +98,7 @@ export function ProjectsDeck() {
 
         {/* Inspect button overlay */}
         <button
+          onMouseEnter={() => cyberAudio.playHover()}
           onClick={(e) => {
             e.stopPropagation();
             cyberAudio.playClick();
@@ -156,6 +157,7 @@ export function ProjectsDeck() {
           {/* Actions Footer */}
           <div className="pt-2 border-t border-[#222533] flex items-center justify-between gap-2">
             <button
+              onMouseEnter={() => cyberAudio.playHover()}
               onClick={() => {
                 cyberAudio.playClick();
                 setSelectedProject(project);
@@ -172,6 +174,7 @@ export function ProjectsDeck() {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onMouseEnter={() => cyberAudio.playHover()}
                   onClick={() => cyberAudio.playClick()}
                   className="p-1.5 bg-[#14151f] text-[#8a8f9d] hover:text-white border border-[#222533] hover:border-[#fcee0a] transition-all"
                   title="View on GitHub"
@@ -184,6 +187,7 @@ export function ProjectsDeck() {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onMouseEnter={() => cyberAudio.playHover()}
                   onClick={() => cyberAudio.playClick()}
                   className="px-2 py-1 bg-[#14151f] hover:bg-[#ff003c] text-white border border-[#222533] hover:border-[#ff003c] transition-all text-[11px] font-bold flex items-center gap-1"
                   title="Play on itch.io"
@@ -250,6 +254,7 @@ export function ProjectsDeck() {
           {/* Sub-filters for creative work */}
           <div className="flex flex-wrap gap-2 text-xs font-bold font-mono">
             <button
+              onMouseEnter={() => cyberAudio.playHover()}
               onClick={() => handleCreativeFilter('all')}
               className={`px-3 py-1.5 transition-all border clip-cyber-button cursor-pointer ${
                 creativeFilter === 'all'
@@ -260,6 +265,7 @@ export function ProjectsDeck() {
               All Creative ({CREATIVE_PROJECTS.length})
             </button>
             <button
+              onMouseEnter={() => cyberAudio.playHover()}
               onClick={() => handleCreativeFilter('design')}
               className={`px-3 py-1.5 transition-all border clip-cyber-button cursor-pointer ${
                 creativeFilter === 'design'
@@ -270,6 +276,7 @@ export function ProjectsDeck() {
               Canva Graphics (3)
             </button>
             <button
+              onMouseEnter={() => cyberAudio.playHover()}
               onClick={() => handleCreativeFilter('art')}
               className={`px-3 py-1.5 transition-all border clip-cyber-button cursor-pointer ${
                 creativeFilter === 'art'

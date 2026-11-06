@@ -59,13 +59,14 @@ export function SkillMatrix() {
             <div
               key={idx}
               onMouseEnter={() => cyberAudio.playHover()}
+              onClick={() => cyberAudio.playLaser()}
               className={`p-6 bg-[#0f1016] border border-[#222533] ${getAccentBorder(
                 cat.accent
-              )} flex flex-col justify-between clip-cyber-corner`}
+              )} flex flex-col justify-between clip-cyber-corner hover:border-[#fcee0a] transition-all cursor-pointer group`}
             >
               <div>
                 <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#222533]">
-                  <h3 className="text-sm font-bold text-white tracking-widest font-mono">
+                  <h3 className="text-sm font-bold text-white tracking-widest font-mono group-hover:text-[#fcee0a] transition-colors">
                     {cat.category}
                   </h3>
                   <span className="text-xs text-[#8a8f9d] font-mono">[ 0{idx + 1} ]</span>
@@ -73,7 +74,14 @@ export function SkillMatrix() {
 
                 <div className="space-y-4">
                   {cat.skills.map((skill, sIdx) => (
-                    <div key={sIdx} className="space-y-1">
+                    <div
+                      key={sIdx}
+                      onMouseEnter={(e) => {
+                        e.stopPropagation();
+                        cyberAudio.playHover();
+                      }}
+                      className="space-y-1 p-1.5 -mx-1.5 rounded-[2px] hover:bg-white/5 transition-colors"
+                    >
                       <div className="flex justify-between items-center text-sm">
                         <span className="font-bold text-[#f5f6fa]">{skill.name}</span>
                         <span
