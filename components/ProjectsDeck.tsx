@@ -127,6 +127,18 @@ export function ProjectsDeck() {
                 {project.description}
               </p>
             </>
+          ) : project.category === 'design' ? (
+            <>
+              <div className="text-xs text-[#fcee0a] font-mono font-semibold mb-1">
+                Canva
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-[#f5f6fa] group-hover:text-[#fcee0a] transition-colors mb-2">
+                {project.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-[#a0a5b5] leading-relaxed mb-4">
+                {project.description}
+              </p>
+            </>
           ) : (
             <>
               <div className="text-[11px] text-[#8a8f9d] font-mono mb-1">{project.subtitle}</div>

@@ -133,9 +133,9 @@ export const CREATIVE_PROJECTS: ProjectItem[] = [
     id: 'ampliverse',
     title: 'Ampliverse',
     category: 'design',
-    subtitle: 'Poster Composition (Canva)',
+    subtitle: 'Canva',
     description:
-      'High-contrast typographic poster layout and visual composition designed in Canva.',
+      "Designed for the club SNU Amplified's event, blending cosmic space themes, stars, and neon lights inspired by the 'AmpliVerse' universe concept.",
     tags: ['Canva', 'Graphic Design', 'Poster Design', 'Typography'],
     featured: true,
     metrics: [
@@ -155,9 +155,9 @@ export const CREATIVE_PROJECTS: ProjectItem[] = [
     id: 'ignatius',
     title: 'Ignatius',
     category: 'design',
-    subtitle: 'Character Key Visual (Canva)',
+    subtitle: 'Canva',
     description:
-      'Character-driven key visual and modern editorial layout created in Canva.',
+      'A New Year greeting poster created for the Ignatius gaming community, incorporating well-known game characters and signs.',
     tags: ['Canva', 'Graphic Design', 'Key Visual', 'Typography'],
     featured: true,
     metrics: [
@@ -177,9 +177,9 @@ export const CREATIVE_PROJECTS: ProjectItem[] = [
     id: 'zda-onboarding',
     title: 'ZDA Onboarding',
     category: 'design',
-    subtitle: 'UI Onboarding Layout (Canva)',
+    subtitle: 'Canva',
     description:
-      'Instructional visual onboarding flow and card layout designed in Canva.',
+      'Member onboarding visual for the ZeroDay Alliance cybersecurity club, styled after a hacked analog CRT monitor broadcast with glitch aesthetics.',
     tags: ['Canva', 'UI Design', 'Onboarding Layout'],
     featured: false,
     metrics: [

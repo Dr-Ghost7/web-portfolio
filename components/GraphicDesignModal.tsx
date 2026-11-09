@@ -102,7 +102,11 @@ export function GraphicDesignModal({ project, onClose }: GraphicDesignModalProps
                 {project.title}
               </h2>
               <p className="text-xs text-[#fcee0a] font-mono">
-                {project.category === 'art' ? 'Tool: Ibis Paint X' : project.subtitle}
+                {project.category === 'art'
+                  ? 'Ibis Paint X'
+                  : project.category === 'design'
+                  ? 'Canva'
+                  : project.subtitle}
               </p>
             </div>
 
