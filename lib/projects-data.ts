@@ -169,7 +169,7 @@ export const TECHNICAL_PROJECTS: ProjectItem[] = [
       { label: 'PLATFORM', value: 'ITCH.IO' },
       { label: 'ENGINE', value: 'GODOT 3D' },
     ],
-    image: '/screenshots/gangling-forest.png',
+    image: '/screenshots/gangling-forest.jpg',
     accentColor: 'red',
     details: {
       role: 'Game Programmer & Narrative',
