@@ -64,7 +64,7 @@ export const TECHNICAL_PROJECTS: ProjectItem[] = [
       { label: 'INFERENCE', value: '<0.15MS / FRAME' },
       { label: 'WEIGHTS', value: '97.26% ACCURACY' },
     ],
-    image: '/screenshots/neural-network.png',
+    image: '/screenshots/neural-network.jpg',
     accentColor: 'red',
     details: {
       role: 'Frontend & Graphics Developer',
