@@ -15,7 +15,6 @@ export interface ProjectItem {
     role: string;
     timeline: string;
     deliverables?: string[];
-    palette?: string[];
   };
 }
 
@@ -45,7 +44,6 @@ export const TECHNICAL_PROJECTS: ProjectItem[] = [
         'Real-time rhythm oscilloscope for dwell/flight times',
         'Enrollment and biometric verification workflow',
       ],
-      palette: ['#0a0d12', '#0f1420', '#3ee08a', '#f2a65a', '#5b9dff'],
     },
   },
   {
@@ -72,7 +70,6 @@ export const TECHNICAL_PROJECTS: ProjectItem[] = [
         'Leitner Box cognitive spaced repetition',
         'Countdown Death mode with difficulty scaling',
       ],
-      palette: ['#060608', '#0d111a', '#00e676', '#fcee0a', '#ff003c'],
     },
   },
   {
@@ -99,7 +96,6 @@ export const TECHNICAL_PROJECTS: ProjectItem[] = [
         'A* and Q-Learning comparative maze solvers',
         'Telemetry visualization and convergence benchmarks',
       ],
-      palette: ['#08080c', '#12131c', '#fcee0a', '#ff003c', '#3ee08a'],
     },
   },
   {
@@ -127,7 +123,6 @@ export const TECHNICAL_PROJECTS: ProjectItem[] = [
         '3D player controller, objective logic & creature encounter',
         'Story-driven psychological horror narrative',
       ],
-      palette: ['#060807', '#0c1a14', '#183a2b', '#3ee08a', '#fa5c5c'],
     },
   },
 ];
@@ -154,7 +149,6 @@ export const CREATIVE_PROJECTS: ProjectItem[] = [
       role: 'Graphic Designer',
       timeline: 'Canva Design',
       deliverables: ['Poster typography composition and color layout'],
-      palette: ['#0d0e14', '#1a1d2e', '#00c4cc', '#fcee0a', '#ff003c'],
     },
   },
   {
@@ -177,7 +171,6 @@ export const CREATIVE_PROJECTS: ProjectItem[] = [
       role: 'Graphic Designer',
       timeline: 'Canva Design',
       deliverables: ['Square key visual and typographic framing'],
-      palette: ['#0a0a0c', '#181820', '#ff003c', '#ffffff', '#8a8f9d'],
     },
   },
   {
@@ -200,76 +193,54 @@ export const CREATIVE_PROJECTS: ProjectItem[] = [
       role: 'UI Designer',
       timeline: 'Canva Design',
       deliverables: ['Step-by-step onboarding screen layout'],
-      palette: ['#0f1118', '#1a1f2e', '#3ee08a', '#5b9dff', '#ffffff'],
-    },
-  },
-  {
-    id: 'ghost-art',
-    title: 'Ghost',
-    category: 'art',
-    subtitle: 'Atmospheric Digital Painting (Ibis Paint X)',
-    description:
-      'Atmospheric digital painting created in Ibis Paint X focusing on low-light mood and subtle lighting.',
-    tags: ['Ibis Paint X', 'Digital Painting', 'Mood & Lighting'],
-    featured: true,
-    metrics: [
-      { label: 'TOOL', value: 'IBIS PAINT X' },
-      { label: 'MASTER', value: '3400 x 2105' },
-      { label: 'MEDIUM', value: 'DIGITAL BRUSH' },
-    ],
-    image: '/digital-art/ghost.png',
-    accentColor: 'yellow',
-    details: {
-      role: 'Illustrator',
-      timeline: 'Ibis Paint X Art',
-      deliverables: ['3.4K master digital illustration with low-light values'],
-      palette: ['#040507', '#0e121a', '#fcee0a', '#00e676', '#ffffff'],
     },
   },
   {
     id: 'bookstore-art',
     title: 'BookStore',
     category: 'art',
-    subtitle: 'Interior Digital Illustration (Ibis Paint X)',
+    subtitle: 'Ibis Paint X',
     description:
-      'Environmental and architectural interior digital illustration crafted in Ibis Paint X with cozy perspective.',
-    tags: ['Ibis Paint X', 'Environment Art', 'Digital Painting'],
-    featured: true,
-    metrics: [
-      { label: 'TOOL', value: 'IBIS PAINT X' },
-      { label: 'GENRE', value: 'INTERIOR' },
-      { label: 'CANVAS', value: '1280 x 1280' },
-    ],
+      'A girl holding an umbrella outside a neon-lit bookstore in the rain.',
+    tags: ['Ibis Paint X', 'Digital Art'],
+    featured: false,
     image: '/digital-art/bookstore.png',
     accentColor: 'red',
     details: {
-      role: 'Illustrator',
-      timeline: 'Ibis Paint X Art',
-      deliverables: ['Detailed architectural interior digital painting'],
-      palette: ['#120f0d', '#291e18', '#f2a65a', '#fa5c5c', '#faeedc'],
+      role: 'Digital Illustrator',
+      timeline: 'Ibis Paint X Artwork',
     },
   },
   {
     id: 'self-portrait-art',
     title: 'Self-Portrait',
     category: 'art',
-    subtitle: 'Character Portrait (Ibis Paint X)',
+    subtitle: 'Ibis Paint X',
     description:
-      'Stylized digital character portrait illustrated in Ibis Paint X with expressive linework.',
-    tags: ['Ibis Paint X', 'Portrait Art', 'Digital Drawing'],
+      'An expressive, stylized digital self-portrait.',
+    tags: ['Ibis Paint X', 'Digital Art'],
     featured: false,
-    metrics: [
-      { label: 'TOOL', value: 'IBIS PAINT X' },
-      { label: 'GENRE', value: 'PORTRAIT' },
-      { label: 'STYLE', value: 'STYLIZED' },
-    ],
     image: '/digital-art/selfportrait.png',
     accentColor: 'white',
     details: {
-      role: 'Illustrator',
-      timeline: 'Ibis Paint X Art',
-      deliverables: ['Stylized digital character drawing'],
-      palette: ['#0d0c12', '#1a1924', '#ff3b69', '#d1c7e6', '#ffffff'],
+      role: 'Digital Illustrator',
+      timeline: 'Ibis Paint X Artwork',
+    },
+  },
+  {
+    id: 'archangel-art',
+    title: 'Archangel',
+    category: 'art',
+    subtitle: 'Ibis Paint X',
+    description:
+      'An original cyberpunk-themed archangel concept illustration.',
+    tags: ['Ibis Paint X', 'Digital Art'],
+    featured: false,
+    image: '/digital-art/archangel.png',
+    accentColor: 'yellow',
+    details: {
+      role: 'Digital Illustrator',
+      timeline: 'Ibis Paint X Artwork',
     },
   },
 ];

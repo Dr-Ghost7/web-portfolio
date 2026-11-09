@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { X, ExternalLink, Palette, CheckCircle2, Gamepad2, Maximize2 } from 'lucide-react';
+import { X, ExternalLink, CheckCircle2, Gamepad2, Maximize2 } from 'lucide-react';
 import { GithubIcon } from '@/components/icons/GithubIcon';
 import { ProjectItem } from '@/lib/projects-data';
 import { cyberAudio } from '@/lib/sounds';
@@ -96,12 +96,14 @@ export function GraphicDesignModal({ project, onClose }: GraphicDesignModalProps
           <div className="flex flex-wrap items-end justify-between gap-3 pb-3 border-b border-[#222533]">
             <div>
               <span className="px-2 py-0.5 bg-[#ff003c] text-white text-[10px] font-bold tracking-widest uppercase">
-                {project.category.toUpperCase()}
+                {project.category === 'art' ? 'DIGITAL ART' : project.category.toUpperCase()}
               </span>
               <h2 className="text-xl sm:text-2xl font-extrabold text-[#f5f6fa] tracking-tight mt-1">
                 {project.title}
               </h2>
-              <p className="text-xs text-[#fcee0a] font-mono">{project.subtitle}</p>
+              <p className="text-xs text-[#fcee0a] font-mono">
+                {project.category === 'art' ? 'Tool: Ibis Paint X' : project.subtitle}
+              </p>
             </div>
 
             <div className="flex items-center gap-2">
@@ -140,8 +142,8 @@ export function GraphicDesignModal({ project, onClose }: GraphicDesignModalProps
             {project.description}
           </p>
 
-          {/* Quick Deliverables / Points */}
-          {project.details?.deliverables && (
+          {/* Quick Deliverables / Points (Only for non-art projects) */}
+          {project.category !== 'art' && project.details?.deliverables && (
             <div className="pt-2">
               <ul className="space-y-1.5 text-xs text-[#c4c8d4]">
                 {project.details.deliverables.map((item, idx) => (
@@ -154,35 +156,12 @@ export function GraphicDesignModal({ project, onClose }: GraphicDesignModalProps
             </div>
           )}
 
-          {/* Color Palette Swatches if available */}
-          {project.details?.palette && (
-            <div className="p-3 bg-[#13141c] border border-[#222533]">
-              <div className="text-[10px] font-bold text-[#8a8f9d] uppercase mb-2 flex items-center gap-1.5 font-mono">
-                <Palette size={12} className="text-[#fcee0a]" />
-                <span>PALETTE</span>
-              </div>
-              <div className="grid grid-cols-5 gap-2">
-                {project.details.palette.map((color, idx) => (
-                  <div key={idx} className="flex items-center gap-1.5 p-1 bg-[#060608] border border-[#222533]">
-                    <div
-                      className="w-4 h-4 border border-white/20 flex-shrink-0"
-                      style={{ backgroundColor: color }}
-                    />
-                    <div className="text-[10px] font-mono text-[#d1d5db] truncate">
-                      {color}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Tags */}
           <div className="flex flex-wrap gap-1.5 pt-2">
-            {project.tags.map((t, idx) => (
+            {(project.category === 'art' ? ['Ibis Paint X', 'Digital Art'] : project.tags).map((t, idx) => (
               <span
                 key={idx}
-                className="px-2 py-0.5 bg-[#13141c] text-[#8a8f9d] border border-[#222533] text-[10px] font-mono"
+                className="px-2 py-0.5 bg-[#14151f] text-[#8a8f9d] border border-[#222533] text-[10px] font-mono"
               >
                 {t}
               </span>

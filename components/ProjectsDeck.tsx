@@ -89,7 +89,7 @@ export function ProjectsDeck() {
               ? 'CANVA'
               : 'ART'}
           </span>
-          {project.featured && (
+          {project.featured && project.category !== 'art' && (
             <span className="px-2 py-0.5 bg-[#060608]/85 text-[#fcee0a] border border-[#fcee0a]/40 text-[10px] font-bold">
               FEATURED
             </span>
@@ -115,18 +115,34 @@ export function ProjectsDeck() {
       {/* Card Body */}
       <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
         <div>
-          <div className="text-[11px] text-[#8a8f9d] font-mono mb-1">{project.subtitle}</div>
-          <h3 className="text-base sm:text-lg font-bold text-[#f5f6fa] group-hover:text-[#fcee0a] transition-colors mb-2">
-            {project.title}
-          </h3>
-          <p className="text-xs text-[#a0a5b5] line-clamp-2 leading-relaxed mb-4">
-            {project.description}
-          </p>
+          {project.category === 'art' ? (
+            <>
+              <div className="text-xs text-[#fcee0a] font-mono font-semibold mb-1">
+                Ibis Paint X
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-[#f5f6fa] group-hover:text-[#fcee0a] transition-colors mb-2">
+                {project.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-[#a0a5b5] leading-relaxed mb-4">
+                {project.description}
+              </p>
+            </>
+          ) : (
+            <>
+              <div className="text-[11px] text-[#8a8f9d] font-mono mb-1">{project.subtitle}</div>
+              <h3 className="text-base sm:text-lg font-bold text-[#f5f6fa] group-hover:text-[#fcee0a] transition-colors mb-2">
+                {project.title}
+              </h3>
+              <p className="text-xs text-[#a0a5b5] line-clamp-2 leading-relaxed mb-4">
+                {project.description}
+              </p>
+            </>
+          )}
         </div>
 
         <div>
-          {/* Metrics preview */}
-          {project.metrics && (
+          {/* Metrics preview (only for non-art projects) */}
+          {project.category !== 'art' && project.metrics && (
             <div className="grid grid-cols-3 gap-1.5 py-2 mb-3 border-y border-[#222533]/80 text-center font-mono">
               {project.metrics.map((m, idx) => (
                 <div key={idx} className="text-[10px]">
@@ -138,16 +154,19 @@ export function ProjectsDeck() {
           )}
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-1 mb-3">
-            {project.tags.slice(0, 3).map((tag, idx) => (
+          <div className="flex flex-wrap gap-1.5 mb-3">
+            {(project.category === 'art'
+              ? ['Ibis Paint X', 'Digital Art']
+              : project.tags.slice(0, 3)
+            ).map((tag, idx) => (
               <span
                 key={idx}
-                className="px-1.5 py-0.5 bg-[#14151f] text-[#8a8f9d] text-[10px] font-mono border border-[#222533]"
+                className="px-2 py-0.5 bg-[#14151f] text-[#c4c8d4] text-[11px] font-mono border border-[#222533]"
               >
                 {tag}
               </span>
             ))}
-            {project.tags.length > 3 && (
+            {project.category !== 'art' && project.tags.length > 3 && (
               <span className="px-1 py-0.5 text-[#8a8f9d] text-[10px] font-mono">
                 +{project.tags.length - 3}
               </span>
@@ -164,7 +183,7 @@ export function ProjectsDeck() {
               }}
               className="text-xs font-bold text-[#fcee0a] hover:underline flex items-center gap-1 cursor-pointer"
             >
-              <span>Details</span>
+              <span>{project.category === 'art' ? 'View Artwork' : 'Details'}</span>
               <span>→</span>
             </button>
 
