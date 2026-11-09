@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { X, ExternalLink, CheckCircle2, Gamepad2, Maximize2 } from 'lucide-react';
+import { X, ExternalLink, Gamepad2, Maximize2 } from 'lucide-react';
 import { GithubIcon } from '@/components/icons/GithubIcon';
 import { ProjectItem } from '@/lib/projects-data';
 import { cyberAudio } from '@/lib/sounds';
@@ -145,20 +145,6 @@ export function GraphicDesignModal({ project, onClose }: GraphicDesignModalProps
           <p className="text-xs sm:text-sm text-[#d1d5db] leading-relaxed">
             {project.description}
           </p>
-
-          {/* Quick Deliverables / Points (Only for non-art projects) */}
-          {project.category !== 'art' && project.details?.deliverables && (
-            <div className="pt-2">
-              <ul className="space-y-1.5 text-xs text-[#c4c8d4]">
-                {project.details.deliverables.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <CheckCircle2 size={13} className="text-[#fcee0a] mt-0.5 flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
 
           {/* Tags */}
           <div className="flex flex-wrap gap-1.5 pt-2">

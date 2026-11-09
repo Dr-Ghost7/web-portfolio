@@ -148,7 +148,6 @@ export const CREATIVE_PROJECTS: ProjectItem[] = [
     details: {
       role: 'Graphic Designer',
       timeline: 'Canva Design',
-      deliverables: ['Poster typography composition and color layout'],
     },
   },
   {
@@ -170,7 +169,6 @@ export const CREATIVE_PROJECTS: ProjectItem[] = [
     details: {
       role: 'Graphic Designer',
       timeline: 'Canva Design',
-      deliverables: ['Square key visual and typographic framing'],
     },
   },
   {
@@ -192,7 +190,6 @@ export const CREATIVE_PROJECTS: ProjectItem[] = [
     details: {
       role: 'UI Designer',
       timeline: 'Canva Design',
-      deliverables: ['Step-by-step onboarding screen layout'],
     },
   },
   {
