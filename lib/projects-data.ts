@@ -37,7 +37,7 @@ export const TECHNICAL_PROJECTS: ProjectItem[] = [
       { label: 'PHYSICS', value: 'VECTOR RAF' },
       { label: 'AUDIO', value: 'SYNTHESIZED' },
     ],
-    image: '/screenshots/normal-notepad.png',
+    image: '/screenshots/normal-notepad.jpg',
     accentColor: 'yellow',
     details: {
       role: 'Frontend Developer',
