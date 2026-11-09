@@ -131,10 +131,14 @@ export function GraphicDesignModal({ project, onClose }: GraphicDesignModalProps
                   rel="noopener noreferrer"
                   onMouseEnter={() => cyberAudio.playHover()}
                   onClick={() => cyberAudio.playClick()}
-                  className="px-3 py-1.5 bg-[#ff003c] hover:bg-white text-white hover:text-black text-xs font-bold flex items-center gap-1.5 transition-colors font-mono"
+                  className={`px-3 py-1.5 ${
+                    project.category === 'gamedev'
+                      ? 'bg-[#ff003c] hover:bg-white text-white hover:text-black'
+                      : 'bg-[#fcee0a] hover:bg-white text-black hover:text-black'
+                  } text-xs font-bold flex items-center gap-1.5 transition-colors font-mono`}
                 >
-                  <Gamepad2 size={13} />
-                  <span>Play on itch.io</span>
+                  {project.category === 'gamedev' ? <Gamepad2 size={13} /> : <ExternalLink size={13} />}
+                  <span>{project.category === 'gamedev' ? 'Play on itch.io' : 'Live Demo'}</span>
                   <ExternalLink size={11} />
                 </a>
               )}

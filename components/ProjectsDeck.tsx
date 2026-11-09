@@ -220,11 +220,24 @@ export function ProjectsDeck() {
                   rel="noopener noreferrer"
                   onMouseEnter={() => cyberAudio.playHover()}
                   onClick={() => cyberAudio.playClick()}
-                  className="px-2 py-1 bg-[#14151f] hover:bg-[#ff003c] text-white border border-[#222533] hover:border-[#ff003c] transition-all text-[11px] font-bold flex items-center gap-1"
-                  title="Play on itch.io"
+                  className={`px-2 py-1 bg-[#14151f] ${
+                    project.category === 'gamedev'
+                      ? 'hover:bg-[#ff003c] hover:border-[#ff003c] text-white'
+                      : 'hover:bg-[#fcee0a] hover:border-[#fcee0a] hover:text-black text-[#fcee0a]'
+                  } border border-[#222533] transition-all text-[11px] font-bold flex items-center gap-1 font-mono`}
+                  title={project.category === 'gamedev' ? 'Play on itch.io' : 'Live Demo'}
                 >
-                  <Gamepad2 size={13} />
-                  <span>itch.io</span>
+                  {project.category === 'gamedev' ? (
+                    <>
+                      <Gamepad2 size={13} />
+                      <span>itch.io</span>
+                    </>
+                  ) : (
+                    <>
+                      <ExternalLink size={11} />
+                      <span>Demo</span>
+                    </>
+                  )}
                 </a>
               )}
             </div>

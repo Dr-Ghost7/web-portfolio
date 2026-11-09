@@ -79,7 +79,7 @@ export function Hero({ onExploreProjects, onExploreDesign }: HeroProps) {
             Final-year <strong>Computer Science &amp; Engineering</strong> student crafting responsive web applications with <strong>React.js &amp; Next.js 15</strong>, grounded in low-level <strong>JavaScript &amp; HTML/CSS</strong> mastery.
           </p>
           <p className="text-xs sm:text-sm text-[#9ca3af] leading-relaxed mt-2">
-            Creator of <strong>TypeLock</strong> (behavioral biometrics), <strong>Gangling Bro&apos;s Forest</strong> (3D horror on itch.io), and visual graphics in <strong>Canva &amp; Ibis Paint X</strong>.
+            Creator of <strong>Neural Network X-Ray</strong> (3D WebGL), <strong>Completely Normal Notepad</strong>, <strong>TypeLock</strong>, and <strong>Gangling Bro&apos;s Forest</strong> (3D horror on itch.io).
           </p>
         </div>
 

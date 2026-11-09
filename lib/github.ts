@@ -30,13 +30,37 @@ const FALLBACK_PROFILE: GitHubProfile = {
   name: 'Sinjini Ghosh (Miss_StaticMoth)',
   avatar_url: 'https://avatars.githubusercontent.com/u/178496117?v=4',
   bio: 'Frontend Engineer & Visual Designer // Exploring intelligent interfaces & game systems',
-  public_repos: 10,
+  public_repos: 13,
   followers: 2,
   following: 0,
   html_url: 'https://github.com/Dr-Ghost7',
 };
 
 const FALLBACK_REPOS: GitHubRepo[] = [
+  {
+    id: 101,
+    name: 'completely-normal-notepad',
+    description: 'A client-side kinetic text editor where deleted writing materializes into floating interactive entities.',
+    html_url: 'https://github.com/Dr-Ghost7/completely-normal-notepad',
+    homepage: 'https://completely-normal-notepad-beige.vercel.app',
+    stargazers_count: 0,
+    forks_count: 0,
+    language: 'TypeScript',
+    updated_at: new Date().toISOString(),
+    topics: ['nextjs', 'react19', 'typescript', 'tailwind', 'web-audio'],
+  },
+  {
+    id: 102,
+    name: 'neural-network-xray',
+    description: 'An interactive 3D WebGL visualizer and ablation sandbox for real-time neural network inference in the browser.',
+    html_url: 'https://github.com/Dr-Ghost7/neural-network-xray',
+    homepage: 'https://neural-network-xray-98rk-tau.vercel.app',
+    stargazers_count: 0,
+    forks_count: 0,
+    language: 'TypeScript',
+    updated_at: new Date().toISOString(),
+    topics: ['threejs', 'react-three-fiber', 'nextjs', 'zustand', 'mnist'],
+  },
   {
     id: 1,
     name: 'astar-vs-qlearning-simulation',
