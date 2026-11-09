@@ -317,7 +317,7 @@ export function ProjectsDeck() {
                   : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white'
               }`}
             >
-              Canva Graphics (3)
+              Canva Graphics ({CREATIVE_PROJECTS.filter((p) => p.category === 'design').length})
             </button>
             <button
               onMouseEnter={() => cyberAudio.playHover()}
@@ -328,12 +328,12 @@ export function ProjectsDeck() {
                   : 'bg-[#13141c] text-[#8a8f9d] border-[#222533] hover:text-white'
               }`}
             >
-              Ibis Paint X (3)
+              Ibis Paint X ({CREATIVE_PROJECTS.filter((p) => p.category === 'art').length})
             </button>
           </div>
         </div>
 
-        {/* Creative Grid (6 items) */}
+        {/* Creative Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredCreative.map((project) => renderCard(project))}
         </div>

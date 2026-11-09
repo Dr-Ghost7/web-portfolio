@@ -206,6 +206,27 @@ export const CREATIVE_PROJECTS: ProjectItem[] = [
     },
   },
   {
+    id: 'zda-orientation',
+    title: 'ZDA Orientation',
+    category: 'design',
+    subtitle: 'Canva',
+    description:
+      'Welcome orientation poster for ZeroDay Alliance, featuring a wireframe globe with code nodes representing global cyber telemetry.',
+    tags: ['Canva', 'Cybersecurity', 'Poster Design', 'Key Visual'],
+    featured: true,
+    metrics: [
+      { label: 'TOOL', value: 'CANVA' },
+      { label: 'THEME', value: 'ORIENTATION' },
+      { label: 'PALETTE', value: 'NEON RED' },
+    ],
+    image: '/graphics-design/zda-orientation.jpg',
+    accentColor: 'red',
+    details: {
+      role: 'Graphic Designer',
+      timeline: 'Canva Design',
+    },
+  },
+  {
     id: 'ignatius',
     title: 'Ignatius',
     category: 'design',
@@ -220,6 +241,48 @@ export const CREATIVE_PROJECTS: ProjectItem[] = [
       { label: 'TYPE', value: 'KEY VISUAL' },
     ],
     image: '/graphics-design/ignatius.png',
+    accentColor: 'red',
+    details: {
+      role: 'Graphic Designer',
+      timeline: 'Canva Design',
+    },
+  },
+  {
+    id: 'zda-classes',
+    title: 'ZDA Classes',
+    category: 'design',
+    subtitle: 'Canva',
+    description:
+      'An engaging cybersecurity class announcement poster designed with sharp cyberpunk frame outlines and high-contrast lines.',
+    tags: ['Canva', 'Graphic Design', 'Announcement', 'Cyberpunk'],
+    featured: false,
+    metrics: [
+      { label: 'TOOL', value: 'CANVA' },
+      { label: 'STYLE', value: 'CYBER FRAME' },
+      { label: 'FORMAT', value: 'PROMO POSTER' },
+    ],
+    image: '/graphics-design/zda-classes.jpg',
+    accentColor: 'yellow',
+    details: {
+      role: 'Graphic Designer',
+      timeline: 'Canva Design',
+    },
+  },
+  {
+    id: 'zda-seminar',
+    title: 'ZDA Seminar',
+    category: 'design',
+    subtitle: 'Canva',
+    description:
+      'Network and security session alert poster designed with a smooth cyber flow and the club’s signature red-accented theme.',
+    tags: ['Canva', 'Event Alert', 'Network Security', 'Cyber Aesthetic'],
+    featured: false,
+    metrics: [
+      { label: 'TOOL', value: 'CANVA' },
+      { label: 'TOPIC', value: 'NETWORKING' },
+      { label: 'TONE', value: 'CRIMSON CYBER' },
+    ],
+    image: '/graphics-design/zda-seminar.jpg',
     accentColor: 'red',
     details: {
       role: 'Graphic Designer',
@@ -244,6 +307,48 @@ export const CREATIVE_PROJECTS: ProjectItem[] = [
     accentColor: 'white',
     details: {
       role: 'UI Designer',
+      timeline: 'Canva Design',
+    },
+  },
+  {
+    id: 'ignatius-diwali',
+    title: 'Ignatius Diwali',
+    category: 'design',
+    subtitle: 'Canva',
+    description:
+      'Vibrant Diwali greeting poster created for the Ignatius gaming community, pairing glowing sky lanterns with gaming controller elements.',
+    tags: ['Canva', 'Gaming Community', 'Festive Poster', 'Typography'],
+    featured: false,
+    metrics: [
+      { label: 'TOOL', value: 'CANVA' },
+      { label: 'THEME', value: 'GAMING DIWALI' },
+      { label: 'FORMAT', value: 'POSTER' },
+    ],
+    image: '/graphics-design/ignatius-diwali.jpg',
+    accentColor: 'yellow',
+    details: {
+      role: 'Graphic Designer',
+      timeline: 'Canva Design',
+    },
+  },
+  {
+    id: 'zda-holi',
+    title: 'ZDA Holi',
+    category: 'design',
+    subtitle: 'Canva',
+    description:
+      'Festive Holi greeting for ZeroDay Alliance, featuring clean powder splatter textures and ornate mandala art without color overload.',
+    tags: ['Canva', 'Festive Greeting', 'Typography', 'Mandala Art'],
+    featured: false,
+    metrics: [
+      { label: 'TOOL', value: 'CANVA' },
+      { label: 'OCCASION', value: 'HOLI' },
+      { label: 'STYLE', value: 'BALANCED SPLASH' },
+    ],
+    image: '/graphics-design/zda-holi.jpg',
+    accentColor: 'white',
+    details: {
+      role: 'Graphic Designer',
       timeline: 'Canva Design',
     },
   },
