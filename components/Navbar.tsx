@@ -51,20 +51,12 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
             <span className="text-[#fcee0a] mr-1">//</span>01.Projects
           </a>
           <a
-            href="#github"
-            onMouseEnter={() => cyberAudio.playHover()}
-            onClick={() => cyberAudio.playClick()}
-            className="hover:text-[#fcee0a] transition-colors"
-          >
-            <span className="text-[#fcee0a] mr-1">//</span>02.GitHub
-          </a>
-          <a
             href="#skills"
             onMouseEnter={() => cyberAudio.playHover()}
             onClick={() => cyberAudio.playClick()}
             className="hover:text-[#fcee0a] transition-colors"
           >
-            <span className="text-[#fcee0a] mr-1">//</span>03.Skills
+            <span className="text-[#fcee0a] mr-1">//</span>02.Skills
           </a>
           <a
             href="#contact"
@@ -72,7 +64,7 @@ export function Navbar({ githubLogin = 'Dr-Ghost7' }: NavbarProps) {
             onClick={() => cyberAudio.playClick()}
             className="hover:text-[#ff003c] transition-colors"
           >
-            <span className="text-[#ff003c] mr-1">//</span>04.Contact
+            <span className="text-[#ff003c] mr-1">//</span>03.Contact
           </a>
         </nav>
 

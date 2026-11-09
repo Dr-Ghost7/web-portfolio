@@ -31,6 +31,8 @@ export function SkillMatrix() {
         return 'bg-emerald-400 text-black';
       case 'FINAL YEAR':
         return 'bg-blue-400 text-black';
+      case 'PROFICIENT':
+        return 'bg-[#1a1d29] text-[#f5f6fa] border border-[#3b4261]';
       default:
         return 'bg-[#222533] text-white';
     }
