@@ -353,6 +353,27 @@ export const CREATIVE_PROJECTS: ProjectItem[] = [
     },
   },
   {
+    id: 'zda-sosthi',
+    title: 'ZDA Sosthi',
+    category: 'design',
+    subtitle: 'Canva',
+    description:
+      'Durga Puja Maha Sosthi greeting for ZeroDay Alliance, highlighting traditional idol framing, floral accents, and crimson festive tones.',
+    tags: ['Canva', 'Durga Puja', 'Festive Greeting', 'Typography'],
+    featured: false,
+    metrics: [
+      { label: 'TOOL', value: 'CANVA' },
+      { label: 'OCCASION', value: 'SOSTHI' },
+      { label: 'PALETTE', value: 'TERRACOTTA RED' },
+    ],
+    image: '/graphics-design/zda-sosthi.jpg',
+    accentColor: 'red',
+    details: {
+      role: 'Graphic Designer',
+      timeline: 'Canva Design',
+    },
+  },
+  {
     id: 'bookstore-art',
     title: 'BookStore',
     category: 'art',
