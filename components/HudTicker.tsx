@@ -22,7 +22,7 @@ export function HudTicker() {
           <div key={idx} className="flex items-center space-x-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#fcee0a] animate-ping" />
             <span className="text-white font-medium">{text}</span>
-            <span className="text-[#ff003c]">//</span>
+            <span className="text-[#ff003c]">{'//'}</span>
           </div>
         ))}
       </div>

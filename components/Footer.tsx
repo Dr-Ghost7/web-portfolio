@@ -1,8 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ChevronUp, Mail } from 'lucide-react';
-import { GithubIcon } from '@/components/icons/GithubIcon';
+import { ChevronUp } from 'lucide-react';
 import { cyberAudio } from '@/lib/sounds';
 
 export function Footer() {
@@ -19,7 +18,7 @@ export function Footer() {
           <div className="flex items-center justify-center md:justify-start gap-2 text-white font-extrabold text-base tracking-wider">
             <span className="text-[#fcee0a]">&gt;&gt;</span>
             <span>SINJINI GHOSH</span>
-            <span className="text-[#ff003c]">//</span>
+            <span className="text-[#ff003c]">{'//'}</span>
             <span>PORTFOLIO</span>
           </div>
           <div className="text-xs sm:text-sm text-[#8a8f9d]">

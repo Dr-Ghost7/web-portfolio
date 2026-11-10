@@ -5,7 +5,7 @@ import { TECHNICAL_PROJECTS, CREATIVE_PROJECTS, ProjectItem } from '@/lib/projec
 import { GraphicDesignModal } from '@/components/GraphicDesignModal';
 import { CyberDivider } from '@/components/CyberDivider';
 import { cyberAudio } from '@/lib/sounds';
-import { ExternalLink, Eye, Gamepad2, Palette, Code2, Sparkles, Layers } from 'lucide-react';
+import { ExternalLink, Eye, Gamepad2, Palette, Code2 } from 'lucide-react';
 import { GithubIcon } from '@/components/icons/GithubIcon';
 
 export function ProjectsDeck() {

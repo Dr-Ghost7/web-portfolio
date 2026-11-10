@@ -38,7 +38,7 @@ export function DigitalHazardTape({ className = '' }: DigitalHazardTapeProps) {
 
           {/* Micro Hazard Slash */}
           <span className="text-black/60 font-mono font-bold text-xs select-none">
-            ///
+            {'///'}
           </span>
         </div>
       ))}

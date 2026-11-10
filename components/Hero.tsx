@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight, Palette, Mail, Gamepad2, Sparkles } from 'lucide-react';
+import { ArrowRight, Palette, Mail, Gamepad2 } from 'lucide-react';
 import { cyberAudio } from '@/lib/sounds';
 
 interface HeroProps {

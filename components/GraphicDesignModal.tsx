@@ -48,7 +48,7 @@ export function GraphicDesignModal({ project, onClose }: GraphicDesignModalProps
         <div className="sticky top-0 z-20 flex items-center justify-between px-4 sm:px-6 py-2.5 bg-[#13141c] border-b border-[#222533]">
           <div className="flex items-center gap-2 text-xs">
             <span className="w-2 h-2 bg-[#fcee0a] animate-pulse" />
-            <span className="text-[#8a8f9d] font-mono">//</span>
+            <span className="text-[#8a8f9d] font-mono">{'//'}</span>
             <span className="text-[#fcee0a] font-bold font-mono">{project.title.toUpperCase()}</span>
           </div>
 

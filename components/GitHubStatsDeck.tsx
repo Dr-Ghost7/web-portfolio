@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { GitHubProfile, GitHubRepo, GITHUB_USERNAME } from '@/lib/github';
 import { Star, GitFork, Terminal, Search, ExternalLink, Activity } from 'lucide-react';
-import { GithubIcon } from '@/components/icons/GithubIcon';
 import { cyberAudio } from '@/lib/sounds';
 
 interface GitHubStatsDeckProps {

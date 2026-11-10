@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Terminal, Send, Check, Copy, Mail, ExternalLink } from 'lucide-react';
+import { Send, Check, Copy, Mail, ExternalLink } from 'lucide-react';
 import { GithubIcon } from '@/components/icons/GithubIcon';
 import { cyberAudio } from '@/lib/sounds';
 
