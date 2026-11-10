@@ -266,8 +266,8 @@ export function ProjectsDeck() {
           </p>
         </div>
 
-        {/* Technical Grid (4 items) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
+        {/* Technical Grid (6 items in 2 rows of 3) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {TECHNICAL_PROJECTS.map((project) => renderCard(project))}
         </div>
 
